@@ -48,7 +48,7 @@
             text-align: center;
         }
 
-        /* Stil für das Overlay */
+        /* Stil für das transparente Overlay */
         #overlay {
             display: none;
             position: fixed;
@@ -56,7 +56,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Transparentes Overlay */
+            background-color: rgba(0, 0, 0, 0); /* Vollständig transparent */
             z-index: 9999; /* Stellen Sie sicher, dass das Overlay über allem anderen liegt */
             cursor: not-allowed; /* Ändern Sie den Cursor, um anzuzeigen, dass Rechtsklick deaktiviert ist */
         }
@@ -64,7 +64,7 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Asura Falls Logo">
+        <img src="logo.png" alt="Asura Falls Logo" id="logo">
     </header>
     <nav>
         <a href="#home">Home</a>
@@ -88,16 +88,16 @@
         <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <!-- Overlay, um Rechtsklick zu deaktivieren -->
+    <!-- Transparentes Overlay, um Rechtsklick zu deaktivieren -->
     <div id="overlay"></div>
 
     <script>
         // Rechtsklick deaktivieren
         window.onload = function() {
-            var bilder = document.querySelectorAll('.container img');
+            var bilder = document.querySelectorAll('img, #logo');
             var overlay = document.getElementById('overlay');
             
-            // Für jedes Bild im Container
+            // Für jedes Bild und das Logo
             bilder.forEach(function(bild) {
                 // Wenn mit der rechten Maustaste auf das Bild geklickt wird, wird das Overlay angezeigt
                 bild.addEventListener('contextmenu', function(event) {
