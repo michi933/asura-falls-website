@@ -44,13 +44,13 @@
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Gleichmäßiger Abstand zwischen Bildern */
+            justify-content: flex-start; /* Align items to the start */
             margin-top: 20px;
         }
 
         .gallery-item {
-            flex-basis: calc(33.33% - 10px); /* 3 Bilder pro Zeile, mit Abstand */
-            margin-bottom: 10px; /* Abstand zwischen den Zeilen */
+            flex-basis: 19%; /* Adjust to fit 5 items in a row */
+            margin: 1%; /* Small margin to avoid overflow */
         }
 
         .gallery-item img {
@@ -58,11 +58,6 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s; /* Sanfter Übergang bei Hover */
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05); /* Vergrößerung beim Hover */
         }
 
         /* Social media icons styling */
@@ -94,7 +89,7 @@
             max-height: 90%;
         }
 
-        /* Back to Top Button */
+        /* Back to top button styling */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -102,10 +97,9 @@
             background-color: #1db954;
             color: white;
             border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
             display: none; /* Initially hidden */
         }
     </style>
@@ -304,59 +298,61 @@
                     <img src="images/image50.jpg" alt="Image 50">
                 </div>
             </div>
+
+            <!-- Lightbox for image preview -->
+            <div class="overlay" id="overlay" onclick="closeImage()">
+                <img id="overlay-image" src="" alt="Overlay Image">
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/asurafalls" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/asurafalls" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com/asurafalls" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <hr class="styled-hr">
-            <p>If you would like to get in touch with us, please fill out the contact form on our <a href="contact.html" style="color: #1db954;">Contact page</a>.</p>
+            <p>If you have any questions or inquiries, feel free to reach out to us at <a href="mailto:info@asurafalls.de">info@asurafalls.de</a>.</p>
         </section>
 
-        <div class="social-icons">
-            <a href="https://facebook.com/asurafalls" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/asurafalls" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/asurafalls" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/asurafalls" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-
-        <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Overlay Image">
-        </div>
-
-        <button class="back-to-top" id="back-to-top" onclick="scrollToTop()">↑</button>
+        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
 
         <footer>
-            <p style="text-align: center;">&copy; 2024 Asura Falls. All rights reserved.</p>
-            <p style="text-align: center;"><a href="impressum.html" style="color: #1db954;">Impressum</a></p>
+            <p>(C) 2024 Asura Falls. All rights reserved.</p>
+            <p><a href="impressum.html" style="color:white;">Impressum</a></p>
         </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function openImage(src) {
-            document.getElementById("overlay-image").src = src;
-            document.getElementById("overlay").style.display = "flex";
+            document.getElementById('overlay-image').src = src;
+            document.getElementById('overlay').style.display = 'flex';
         }
 
         function closeImage() {
-            document.getElementById("overlay").style.display = "none";
+            document.getElementById('overlay').style.display = 'none';
         }
 
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-
+        // Back to top functionality
         window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block"; // Zeige den Button an
+            let button = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
             } else {
-                backToTopButton.style.display = "none"; // Verstecke den Button
+                button.style.display = 'none';
             }
         };
 
         function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     </script>
 </body>
