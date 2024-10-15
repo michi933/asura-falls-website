@@ -42,22 +42,28 @@
 
         /* Gallery styling */
         .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
             margin-top: 20px;
         }
 
         .gallery-item {
-            flex-basis: 30%;
-            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -106,7 +112,7 @@
 
             <!-- Image Gallery -->
             <div class="gallery-container">
-                <!-- Adding 50 images to the gallery -->
+                <!-- Adding images from image1.jpg to image50.jpg -->
                 <div class="gallery-item">
                     <img src="images/image1.jpg" alt="Image 1">
                 </div>
@@ -122,16 +128,138 @@
                 <div class="gallery-item">
                     <img src="images/image5.jpg" alt="Image 5">
                 </div>
-                <!-- Add more images as needed -->
-                <!-- Placeholder for images 6 to 50 -->
-                <!-- Assume images are named image6.jpg, image7.jpg, ..., image50.jpg -->
                 <div class="gallery-item">
                     <img src="images/image6.jpg" alt="Image 6">
                 </div>
                 <div class="gallery-item">
                     <img src="images/image7.jpg" alt="Image 7">
                 </div>
-                <!-- ... continue until image50.jpg -->
+                <div class="gallery-item">
+                    <img src="images/image8.jpg" alt="Image 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image9.jpg" alt="Image 9">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image10.jpg" alt="Image 10">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image11.jpg" alt="Image 11">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image12.jpg" alt="Image 12">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image13.jpg" alt="Image 13">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image14.jpg" alt="Image 14">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image15.jpg" alt="Image 15">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image16.jpg" alt="Image 16">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image17.jpg" alt="Image 17">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image18.jpg" alt="Image 18">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image19.jpg" alt="Image 19">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image20.jpg" alt="Image 20">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image21.jpg" alt="Image 21">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image22.jpg" alt="Image 22">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image23.jpg" alt="Image 23">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image24.jpg" alt="Image 24">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image25.jpg" alt="Image 25">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image26.jpg" alt="Image 26">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image27.jpg" alt="Image 27">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image28.jpg" alt="Image 28">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image29.jpg" alt="Image 29">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image30.jpg" alt="Image 30">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image31.jpg" alt="Image 31">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image32.jpg" alt="Image 32">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image33.jpg" alt="Image 33">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image34.jpg" alt="Image 34">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image35.jpg" alt="Image 35">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image36.jpg" alt="Image 36">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image37.jpg" alt="Image 37">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image38.jpg" alt="Image 38">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image39.jpg" alt="Image 39">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image40.jpg" alt="Image 40">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image41.jpg" alt="Image 41">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image42.jpg" alt="Image 42">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image43.jpg" alt="Image 43">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image44.jpg" alt="Image 44">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image45.jpg" alt="Image 45">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image46.jpg" alt="Image 46">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image47.jpg" alt="Image 47">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image48.jpg" alt="Image 48">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image49.jpg" alt="Image 49">
+                </div>
                 <div class="gallery-item">
                     <img src="images/image50.jpg" alt="Image 50">
                 </div>
