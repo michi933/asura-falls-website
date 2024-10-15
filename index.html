@@ -1,121 +1,173 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" href="images/monogram.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <title>Asura Falls</title>
+    <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
+    <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
+    <meta name="author" content="Kevin Trometer">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            padding: 1rem;
-            text-align: center;
-        }
-        header img {
-            width: 100%;
-            height: auto;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-        }
-        nav a {
-            color: #f0f0f0;
-            padding: 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
-            padding: 2rem;
-        }
-        .container img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 1rem;
-        }
-        footer {
-            background-color: #333;
-            padding: 1rem;
-            text-align: center;
+            background-color: black;
+            color: white;
         }
 
-        /* Stil für das transparente Overlay */
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+        .navbar,
+        .styled-hr {
+            border-color: white;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #1db954;
+        }
+
+        .band-image,
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Gallery styling */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex-basis: 30%;
+            margin: 10px;
+        }
+
+        .gallery-item img {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0); /* Vollständig transparent */
-            z-index: 9999; /* Stellen Sie sicher, dass das Overlay über allem anderen liegt */
-            cursor: not-allowed; /* Ändern Sie den Cursor, um anzuzeigen, dass Rechtsklick deaktiviert ist */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
-<body>
-    <header>
-        <img src="logo.png" alt="Asura Falls Logo" id="logo">
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
-    <div class="container" id="home">
-        <h2>Willkommen bei Asura Falls</h2>
-        <p>Asura Falls, das sind 6 Vollblutmusiker aus dem Herzen Europas die mit melodischen Riffs, tiefen Bässen, Drums die jede Bühne beben lassen und einer gemischten Frontmauer die Welt des Metalcore auf den Kopf stellen.</p>
-        <img src="band.jpg" alt="Band Photo">
+
+<body data-spy="scroll" data-target="#navbar" data-offset="200">
+    <img src="images/logo.jpg" id='logo-image' alt="Logo Image" class="logo-image">
+
+    <div class="container">
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#band">Band</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#media">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#press-rider">Press & Rider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="band">
+            <h2>The Band</h2>
+            <hr class="styled-hr">
+            <img src="images/band.webp" alt="Band Image" class="band-image">
+            <p>Asura Falls is an electrifying band formed in 2022, known for their unique fusion of progressive metal and hard rock. With powerful vocals, intricate guitar work, and deep lyrical content, they aim to deliver a sonic experience that touches the mind and soul.</p>
+        </section>
+
+        <section id="media">
+            <h2>Media</h2>
+            <hr class="styled-hr">
+
+            <!-- Youtube Videos -->
+            <div class="video-container">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="images/image1.jpg" alt="Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image2.jpg" alt="Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image3.jpg" alt="Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image4.jpg" alt="Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image5.jpg" alt="Image 5">
+                </div>
+                <!-- Add more images if available -->
+            </div>
+        </section>
+
+        <section id="press-rider">
+            <div class="row align-items-stretch">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h2 class="mb-4">Press Kit</h2>
+                            <hr class="styled-hr">
+                            <p class="mb-4">View our bio, photos, and media assets.</p>
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/drive/folders/10yNit_4WBD8dTKxwgrh9XCFelCSPxWGA?usp=drive_link" class="btn btn-lg btn-outline-light" target="_blank">View Press Kit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h2 class="mb-4">Tech + Stage Rider</h2>
+                            <hr class="styled-hr">
+                            <p class="mb-4">View our technical and stage setup requirements.</p>
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/17GuA2MfcOES1_6-czg5AzDt04spkYXjo/view?usp=drivesdk" class="btn btn-lg btn-outline-light" target="_blank">View Tech + Stage Rider</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <hr class="styled-hr">
+            <p>Got questions or want to book us for a show? <a href="mailto:info@asurafalls.com" target="_blank" style="color: #1db954">Contact us!</a></p>
+        </section>
+
+        <!-- Bootstrap JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Custom Scripts -->
+        <script src="scripts/navigation.js"></script>
+        <script src="scripts/gallery.js"></script>
     </div>
-    <div class="container" id="about">
-        <h2>Über Uns</h2>
-        <p>Shouts, Screams, Growls und Cleans... Und das aus zwei Kehlen wie sie unterschiedlicher nicht sein könnten. Inspiriert von Genre-Größen wie Bullet For My Valentine oder Killswitch Engage ist hier für jeden Freund der härteren Fraktion ein geiler Abend vorprogrammiert!</p>
-    </div>
-    <div class="container" id="contact">
-        <h2>Kontakt</h2>
-        <p>Wir würden uns freuen, von euch zu hören! Ihr könnt uns unter folgender E-Mail-Adresse erreichen: <a href="mailto:info@asurafalls.de">info@asurafalls.de</a></p>
-    </div>
-    <footer>
-        <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
-    </footer>
-
-    <!-- Transparentes Overlay, um Rechtsklick zu deaktivieren -->
-    <div id="overlay"></div>
-
-    <script>
-        // Rechtsklick deaktivieren
-        window.onload = function() {
-            var bilder = document.querySelectorAll('img, #logo');
-            var overlay = document.getElementById('overlay');
-            
-            // Für jedes Bild und das Logo
-            bilder.forEach(function(bild) {
-                // Wenn mit der rechten Maustaste auf das Bild geklickt wird, wird das Overlay angezeigt
-                bild.addEventListener('contextmenu', function(event) {
-                    event.preventDefault(); // Standardkontextmenü unterdrücken
-                    overlay.style.display = 'block'; // Overlay anzeigen
-                });
-            });
-
-            // Wenn das Overlay geklickt wird, wird es ausgeblendet
-            overlay.addEventListener('click', function() {
-                overlay.style.display = 'none'; // Overlay ausblenden
-            });
-        };
-
-        // Hotlink-Schutz: Prüfen, ob die Seite im Rahmen einer anderen Webseite geladen wird
-        if (top != self) {
-            top.location.href = self.location.href; // Umleitung auf die aktuelle Seite, um Hotlinking zu verhindern
-        }
-    </script>
 </body>
+
 </html>
