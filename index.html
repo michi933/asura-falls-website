@@ -44,13 +44,13 @@
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between; /* Gleichmäßiger Abstand zwischen Bildern */
             margin-top: 20px;
         }
 
         .gallery-item {
-            flex-basis: 30%;
-            margin: 10px;
+            flex-basis: calc(33.33% - 10px); /* 3 Bilder pro Zeile, mit Abstand */
+            margin-bottom: 10px; /* Abstand zwischen den Zeilen */
         }
 
         .gallery-item img {
@@ -58,6 +58,11 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s; /* Sanfter Übergang bei Hover */
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05); /* Vergrößerung beim Hover */
         }
 
         /* Social media icons styling */
@@ -87,6 +92,21 @@
         .overlay img {
             max-width: 90%;
             max-height: 90%;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
@@ -289,41 +309,56 @@
         <section id="contact">
             <h2>Contact</h2>
             <hr class="styled-hr">
-            <p>If you would like to get in touch with us, please reach out via our social media channels or send us an email at <a href="mailto:contact@asurafalls.com">contact@asurafalls.com</a>.</p>
+            <p>If you would like to get in touch with us, please fill out the contact form on our <a href="contact.html" style="color: #1db954;">Contact page</a>.</p>
         </section>
 
         <div class="social-icons">
-            <a href="https://facebook.com/asurafalls" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://instagram.com/asurafalls" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/asurafalls" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://twitter.com/asurafalls" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/asurafalls" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://youtube.com/asurafalls" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <footer>
-            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
-            <p><a href="impressum.html" style="color: white;">Impressum</a></p>
-        </footer>
-
         <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Large Image">
+            <img id="overlay-image" src="" alt="Overlay Image">
         </div>
+
+        <button class="back-to-top" id="back-to-top" onclick="scrollToTop()">↑</button>
+
+        <footer>
+            <p style="text-align: center;">&copy; 2024 Asura Falls. All rights reserved.</p>
+            <p style="text-align: center;"><a href="impressum.html" style="color: #1db954;">Impressum</a></p>
+        </footer>
     </div>
-
-    <script>
-        function openImage(src) {
-            document.getElementById('overlay-image').src = src;
-            document.getElementById('overlay').style.display = 'flex';
-        }
-
-        function closeImage() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script>
+        function openImage(src) {
+            document.getElementById("overlay-image").src = src;
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closeImage() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block"; // Zeige den Button an
+            } else {
+                backToTopButton.style.display = "none"; // Verstecke den Button
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scroll to top
+        }
+    </script>
 </body>
 
 </html>
