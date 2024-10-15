@@ -324,34 +324,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
-
-    <!-- Bootstrap JS, Popper.js, und jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom Scripts -->
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/gallery.js"></script>
-
-    <!-- Image Overlay Script -->
-    <div class="overlay" id="overlay" onclick="closeImage()">
-        <img id="overlay-image" src="" alt="Overlay Image">
-    </div>
-    <script>
-        function openImage(src) {
-            const overlay = document.getElementById('overlay');
-            const overlayImage = document.getElementById('overlay-image');
-            overlayImage.src = src;
-            overlay.style.display = 'flex';
-        }
-
-        function closeImage() {
-            const overlay = document.getElementById('overlay');
-            overlay.style.display = 'none';
-        }
-    </script>
 </body>
 
 </html>
