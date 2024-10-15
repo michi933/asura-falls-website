@@ -12,7 +12,7 @@
     <title>Asura Falls</title>
     <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
     <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
-    <meta name="author" content="Michael Grohs">
+    <meta name="author" content="Kevin Trometer">
     <style>
         body {
             background-color: black;
@@ -42,67 +42,51 @@
 
         /* Gallery styling */
         .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             margin-top: 20px;
         }
 
         .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            cursor: pointer; /* Zeigt an, dass das Bild klickbar ist */
+            flex-basis: 30%;
+            margin: 10px;
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        /* Social media icons styling */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        /* Overlay styling */
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
         .overlay {
-            display: none; /* Standardmäßig verborgen */
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
-            z-index: 1000; /* Über der Galerie */
         }
 
         .overlay img {
             max-width: 90%;
             max-height: 90%;
-        }
-
-        /* Responsive Video */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: black; /* Hintergrundfarbe */
-            margin: 20px 0; /* Abstand nach oben und unten */
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
     </style>
 </head>
@@ -136,7 +120,7 @@
         <section id="band">
             <h2>The Band</h2>
             <hr class="styled-hr">
-            <img src="band.jpg" alt="Band Image" class="band-image">
+            <img src="images/band.jpg" alt="Band Image" class="band-image">
             <p>Asura Falls is an electrifying band formed in 2022, known for their unique fusion of progressive metal and hard rock. With powerful vocals, intricate guitar work, and deep lyrical content, they aim to deliver a sonic experience that touches the mind and soul.</p>
         </section>
 
@@ -146,12 +130,11 @@
 
             <!-- Youtube Videos -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             <!-- Image Gallery -->
             <div class="gallery-container">
-                <!-- Adding images from image1.jpg to image50.jpg -->
                 <div class="gallery-item" onclick="openImage('images/image1.jpg')">
                     <img src="images/image1.jpg" alt="Image 1">
                 </div>
@@ -315,7 +298,7 @@
                             <p class="mb-4">View our bio, photos, and media assets.</p>
                         </div>
                         <div>
-                            <a href="" class="btn btn-lg btn-outline-light" target="_blank">View Press Kit</a>
+                            <a href="https://drive.google.com/drive/folders/10yNit_4WBD8dTKxwgrh9XCFelCSPxWGA?usp=drive_link" class="btn btn-lg btn-outline-light" target="_blank">View Press Kit</a>
                         </div>
                     </div>
                 </div>
@@ -327,7 +310,7 @@
                             <p class="mb-4">View our technical and stage setup requirements.</p>
                         </div>
                         <div>
-                            <a href="" class="btn btn-lg btn-outline-light" target="_blank">View Tech + Stage Rider</a>
+                            <a href="https://drive.google.com/file/d/17GuA2MfcOES1_6-czg5AzDt04spkYXjo/view?usp=drivesdk" class="btn btn-lg btn-outline-light" target="_blank">View Tech + Stage Rider</a>
                         </div>
                     </div>
                 </div>
@@ -337,12 +320,14 @@
         <section id="contact">
             <h2>Contact Us</h2>
             <hr class="styled-hr">
-            <p>Got questions or want to book us for a show? <a href="mailto:info@asurafalls.com" target="_blank" style="color: #1db954">Contact us!</a></p>
+            <p>Got questions or want to book us for a show? <a href="mailto:info@asurafalls.de" target="_blank" style="color: #1db954">Contact us!</a></p>
         </section>
 
-        <!-- Overlay for enlarged images -->
-        <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Enlarged Image">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/asurafalls/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/asura__falls_band/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@asurafallsband" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://app.backstagepro.de/asurafalls" target="_blank"><i class="fab fa-backstagepro"></i></a>
         </div>
 
         <!-- Bootstrap JS, Popper.js, and jQuery -->
@@ -353,17 +338,21 @@
         <script src="scripts/navigation.js"></script>
         <script src="scripts/gallery.js"></script>
 
+        <!-- Image Overlay Script -->
+        <div class="overlay" id="overlay" onclick="closeImage()">
+            <img id="overlay-image" src="" alt="Overlay Image">
+        </div>
         <script>
             function openImage(src) {
                 const overlay = document.getElementById('overlay');
                 const overlayImage = document.getElementById('overlay-image');
-                overlayImage.src = src; // Set the source of the overlay image
-                overlay.style.display = 'flex'; // Show the overlay
+                overlayImage.src = src;
+                overlay.style.display = 'flex';
             }
 
             function closeImage() {
                 const overlay = document.getElementById('overlay');
-                overlay.style.display = 'none'; // Hide the overlay
+                overlay.style.display = 'none';
             }
         </script>
     </div>
