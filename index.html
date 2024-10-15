@@ -88,6 +88,14 @@
             max-width: 90%;
             max-height: 90%;
         }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid white;
+        }
     </style>
 </head>
 
@@ -207,155 +215,58 @@
                 <div class="gallery-item" onclick="openImage('images/image24.jpg')">
                     <img src="images/image24.jpg" alt="Image 24">
                 </div>
-                <div class="gallery-item" onclick="openImage('images/image25.jpg')">
-                    <img src="images/image25.jpg" alt="Image 25">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image26.jpg')">
-                    <img src="images/image26.jpg" alt="Image 26">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image27.jpg')">
-                    <img src="images/image27.jpg" alt="Image 27">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image28.jpg')">
-                    <img src="images/image28.jpg" alt="Image 28">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image29.jpg')">
-                    <img src="images/image29.jpg" alt="Image 29">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image30.jpg')">
-                    <img src="images/image30.jpg" alt="Image 30">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image31.jpg')">
-                    <img src="images/image31.jpg" alt="Image 31">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image32.jpg')">
-                    <img src="images/image32.jpg" alt="Image 32">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image33.jpg')">
-                    <img src="images/image33.jpg" alt="Image 33">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image34.jpg')">
-                    <img src="images/image34.jpg" alt="Image 34">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image35.jpg')">
-                    <img src="images/image35.jpg" alt="Image 35">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image36.jpg')">
-                    <img src="images/image36.jpg" alt="Image 36">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image37.jpg')">
-                    <img src="images/image37.jpg" alt="Image 37">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image38.jpg')">
-                    <img src="images/image38.jpg" alt="Image 38">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image39.jpg')">
-                    <img src="images/image39.jpg" alt="Image 39">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image40.jpg')">
-                    <img src="images/image40.jpg" alt="Image 40">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image41.jpg')">
-                    <img src="images/image41.jpg" alt="Image 41">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image42.jpg')">
-                    <img src="images/image42.jpg" alt="Image 42">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image43.jpg')">
-                    <img src="images/image43.jpg" alt="Image 43">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image44.jpg')">
-                    <img src="images/image44.jpg" alt="Image 44">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image45.jpg')">
-                    <img src="images/image45.jpg" alt="Image 45">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image46.jpg')">
-                    <img src="images/image46.jpg" alt="Image 46">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image47.jpg')">
-                    <img src="images/image47.jpg" alt="Image 47">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image48.jpg')">
-                    <img src="images/image48.jpg" alt="Image 48">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image49.jpg')">
-                    <img src="images/image49.jpg" alt="Image 49">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image50.jpg')">
-                    <img src="images/image50.jpg" alt="Image 50">
-                </div>
+            </div>
+
+            <div class="overlay" id="overlay" onclick="closeImage()">
+                <img id="overlay-image" src="" alt="Large Image">
             </div>
         </section>
 
         <section id="press-rider">
-            <div class="row align-items-stretch">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h2 class="mb-4">Press Kit</h2>
-                            <hr class="styled-hr">
-                            <p class="mb-4">View our bio, photos, and media assets.</p>
-                        </div>
-                        <div>
-                            <a href="https://drive.google.com/drive/folders/10yNit_4WBD8dTKxwgrh9XCFelCSPxWGA?usp=drive_link" class="btn btn-lg btn-outline-light" target="_blank">View Press Kit</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h2 class="mb-4">Tech + Stage Rider</h2>
-                            <hr class="styled-hr">
-                            <p class="mb-4">View our technical and stage setup requirements.</p>
-                        </div>
-                        <div>
-                            <a href="https://drive.google.com/file/d/17GuA2MfcOES1_6-czg5AzDt04spkYXjo/view?usp=drivesdk" class="btn btn-lg btn-outline-light" target="_blank">View Tech + Stage Rider</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2>Press & Rider</h2>
+            <hr class="styled-hr">
+            <p>For press inquiries and rider information, please contact us via the contact form below.</p>
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Contact</h2>
             <hr class="styled-hr">
-            <p>Got questions or want to book us for a show? <a href="mailto:info@asurafalls.de" target="_blank" style="color: #1db954">Contact us!</a></p>
+            <form id="contact-form" method="post" action="send_email.php">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </section>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/asurafalls/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/asura__falls_band/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@asurafallsband" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://app.backstagepro.de/asurafalls" target="_blank"><i class="fab fa-backstagepro"></i></a>
-        </div>
-
-        <!-- Bootstrap JS, Popper.js, and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Custom Scripts -->
-        <script src="scripts/navigation.js"></script>
-        <script src="scripts/gallery.js"></script>
-
-        <!-- Image Overlay Script -->
-        <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Overlay Image">
-        </div>
-        <script>
-            function openImage(src) {
-                const overlay = document.getElementById('overlay');
-                const overlayImage = document.getElementById('overlay-image');
-                overlayImage.src = src;
-                overlay.style.display = 'flex';
-            }
-
-            function closeImage() {
-                const overlay = document.getElementById('overlay');
-                overlay.style.display = 'none';
-            }
-        </script>
+        <footer class="footer">
+            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
+            <p><a href="impressum.html" style="color: white;">Impressum</a></p>
+        </footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openImage(src) {
+            document.getElementById('overlay-image').src = src;
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closeImage() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
