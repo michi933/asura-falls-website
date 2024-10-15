@@ -1,127 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" href="images/monogram.png">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <title>Asura Falls</title>
-    <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
-    <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
-    <meta name="author" content="Kevin Trometer">
-    <style>
-        body {
-            background-color: black;
-            color: white;
-        }
-
-        .navbar,
-        .styled-hr {
-            border-color: white;
-        }
-
-        .nav-link {
-            color: white;
-        }
-
-        .nav-link:hover {
-            color: #1db954;
-        }
-
-        .band-image,
-        .logo-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Gallery styling */
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            flex-basis: 30%;
-            margin: 10px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Social media icons styling */
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asura Falls - Band Webseite</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="200">
-    <img src="logo.png" id='logo-image' alt="Logo Image" class="logo-image">
-
-    <div class="container">
-        <nav id="navbar" class="navbar navbar-expand-md">
-            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#band">Band</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#media">Media</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#press-rider">Press & Rider</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+<body>
+    <header>
+        <h1>Asura Falls</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Über Uns</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
         </nav>
+    </header>
 
-        <section id="band">
-            <h2>The Band</h2>
-            <hr class="styled-hr">
-            <img src="images/band.jpg" alt="Band Image" class="band-image">
-            <p>Asura Falls is an electrifying band formed in 2022, known for their unique fusion of progressive metal and hard rock. With powerful vocals, intricate guitar work, and deep lyrical content, they aim to deliver a sonic experience that touches the mind and soul.</p>
+    <main>
+        <section id="about">
+            <h2>Über Uns</h2>
+            <p>Wir sind Asura Falls, eine Band, die sich leidenschaftlich für Musik und Kunst einsetzt. Unser Ziel ist es,
+                Emotionen durch unsere Klänge zu vermitteln und unvergessliche Erlebnisse zu schaffen.</p>
+            <img src="band.jpg" alt="Asura Falls Bandbild" style="max-width: 100%;">
         </section>
 
         <section id="media">
@@ -130,11 +34,15 @@
 
             <!-- Youtube Videos -->
             <div class="video-container">
-                <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8"
+                    title="Asura Falls - Official Music Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             <!-- Image Gallery -->
             <div class="gallery-container">
+                <!-- Images from image1.jpg to image50.jpg -->
                 <div class="gallery-item" onclick="openImage('images/image1.jpg')">
                     <img src="images/image1.jpg" alt="Image 1">
                 </div>
@@ -288,74 +196,34 @@
             </div>
         </section>
 
-        <section id="press-rider">
-            <div class="row align-items-stretch">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h2 class="mb-4">Press Kit</h2>
-                            <hr class="styled-hr">
-                            <p class="mb-4">View our bio, photos, and media assets.</p>
-                        </div>
-                        <div>
-                            <a href="https://drive.google.com/drive/folders/10yNit_4WBD8dTKxwgrh9XCFelCSPxWGA?usp=drive_link" class="btn btn-lg btn-outline-light" target="_blank">View Press Kit</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h2 class="mb-4">Tech + Stage Rider</h2>
-                            <hr class="styled-hr">
-                            <p class="mb-4">View our technical and stage setup requirements.</p>
-                        </div>
-                        <div>
-                            <a href="https://drive.google.com/file/d/17GuA2MfcOES1_6-czg5AzDt04spkYXjo/view?usp=drivesdk" class="btn btn-lg btn-outline-light" target="_blank">View Tech + Stage Rider</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
-            <h2>Contact Us</h2>
-            <hr class="styled-hr">
-            <p>Got questions or want to book us for a show? <a href="mailto:info@asurafalls.de" target="_blank" style="color: #1db954">Contact us!</a></p>
+            <h2>Kontakt</h2>
+            <p>Wenn du Fragen oder Anfragen hast, kannst du uns über das Kontaktformular erreichen.</p>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Absenden</button>
+            </form>
         </section>
+    </main>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/asurafalls/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/asura__falls_band/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@asurafallsband" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://app.backstagepro.de/asurafalls" target="_blank"><i class="fab fa-backstagepro"></i></a>
-        </div>
+    <footer>
+        <p>(C) 2024 Asura Falls. Alle Rechte vorbehalten.</p>
+    </footer>
 
-        <!-- Bootstrap JS, Popper.js, and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Custom Scripts -->
-        <script src="scripts/navigation.js"></script>
-        <script src="scripts/gallery.js"></script>
-
-        <!-- Image Overlay Script -->
-        <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Overlay Image">
-        </div>
-        <script>
-            function openImage(src) {
-                const overlay = document.getElementById('overlay');
-                const overlayImage = document.getElementById('overlay-image');
-                overlayImage.src = src;
-                overlay.style.display = 'flex';
-            }
-
-            function closeImage() {
-                const overlay = document.getElementById('overlay');
-                overlay.style.display = 'none';
-            }
-        </script>
-    </div>
+    <script>
+        function openImage(src) {
+            const newWindow = window.open("", "_blank");
+            newWindow.document.write(`<img src="${src}" style="width:100%; height:auto;">`);
+        }
+    </script>
 </body>
 
 </html>
