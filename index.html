@@ -90,6 +90,12 @@
             margin: 0 auto;
         }
 
+        /* Logo Styling */
+        .navbar-brand img {
+            height: 40px; /* Logo-Höhe anpassen */
+            width: auto; /* Breite automatisch anpassen */
+        }
+
         /* Gallery styling */
         .gallery-container {
             display: flex;
@@ -161,6 +167,9 @@
 
     <div class="container">
         <nav id="navbar" class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo"> <!-- Logo hinzugefügt -->
+            </a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -207,10 +216,9 @@
                         background-color: #1db954; /* Kräftige grüne Farbe */
                         color: white;
                         border: none;
+                        border-radius: 5px;
                         padding: 15px 30px;
-                        font-size: 1.2em;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                        font-size: 18px;
                         cursor: pointer;
                     ">Gallery</button>
                 </a>
