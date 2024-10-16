@@ -22,17 +22,7 @@
         background-repeat: no-repeat;
         background-color: black; /* Falls das Bild nicht geladen werden kann */
         position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Schwarze halbtransparente Schicht */
-            z-index: 0; /* Hinter den Inhaltsbereichen */
+        filter: brightness(50%); /* Bild um 50% abdunkeln */
         }
         
         section {
