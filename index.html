@@ -13,143 +13,142 @@
     <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
     <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
     <meta name="author" content="Michael Grohs">
- <style>
-    body {
-        background-image: url('background.jpeg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: black; /* Falls das Bild nicht geladen werden kann */
-        position: relative;
-    }
+    <style>
+        body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black; /* Falls das Bild nicht geladen werden kann */
+            position: relative;
+        }
 
-    body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
-        z-index: 1; /* Auf die richtige Schicht setzen */
-    }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
+            z-index: 1; /* Auf die richtige Schicht setzen */
+        }
 
-    section {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
-        padding: 20px;
-        border-radius: 10px; /* Abgerundete Ecken */
-        position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
-        z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
-    }
+        section {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
+            padding: 20px;
+            border-radius: 10px; /* Abgerundete Ecken */
+            position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
+            z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
+        }
 
-    .navbar {
-        background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-        backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-        padding: 10px; /* Etwas mehr Polsterung für die Navbar */
-        border-radius: 10px; /* Abgerundete Ecken für die Navbar */
-    }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+            padding: 10px; /* Etwas mehr Polsterung für die Navbar */
+            border-radius: 10px; /* Abgerundete Ecken für die Navbar */
+        }
 
-    .navbar .nav-link {
-        color: white; /* Schriftfarbe auf Weiß */
-        transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
-    }
+        .navbar .nav-link {
+            color: white; /* Schriftfarbe auf Weiß */
+            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
+        }
 
-    .navbar .nav-link:hover {
-        color: #1db954; /* Grüner Farbwechsel bei Hover */
-    }
+        .navbar .nav-link:hover {
+            color: #1db954; /* Grüner Farbwechsel bei Hover */
+        }
 
-    footer {
-        background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-        backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-        padding: 10px; /* Etwas mehr Polsterung für das Impressum */
-        border-radius: 10px; /* Abgerundete Ecken für das Impressum */
-        text-align: center; /* Text zentrieren */
-        color: white; /* Schriftfarbe auf Weiß */
-    }
+        footer {
+            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+            padding: 10px; /* Etwas mehr Polsterung für das Impressum */
+            border-radius: 10px; /* Abgerundete Ecken für das Impressum */
+            text-align: center; /* Text zentrieren */
+            color: white; /* Schriftfarbe auf Weiß */
+        }
 
-    footer a {
-        color: white; /* Sicherstellen, dass der Link Weiß ist */
-        transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
-    }
+        footer a {
+            color: white; /* Sicherstellen, dass der Link Weiß ist */
+            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
+        }
 
-    footer a:hover {
-        color: #1db954; /* Grüner Farbwechsel bei Hover */
-    }
+        footer a:hover {
+            color: #1db954; /* Grüner Farbwechsel bei Hover */
+        }
 
-    .band-image,
-    .logo-image {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
+        .band-image,
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 
-    /* Gallery styling */
-    .gallery-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Align images to the left */
-        margin-top: 20px;
-    }
+        /* Gallery styling */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align images to the left */
+            margin-top: 20px;
+        }
 
-    .gallery-item {
-        flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
-        margin: 1px; /* Small margin to prevent spacing issues */
-    }
+        .gallery-item {
+            flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
+            margin: 1px; /* Small margin to prevent spacing issues */
+        }
 
-    .gallery-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
 
-    /* Social media icons styling */
-    .social-icons {
-        text-align: center;
-        margin-top: 20px;
-    }
+        /* Social media icons styling */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    .social-icons a {
-        color: white;
-        margin: 0 10px;
-        font-size: 24px;
-    }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
 
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-    }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
 
-    .overlay img {
-        max-width: 90%;
-        max-height: 90%;
-    }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
 
-    /* Back to top button styling */
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #1db954;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        cursor: pointer;
-        display: none; /* Initially hidden */
-    }
-</style>
-
+        /* Back to top button styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="200">
@@ -179,87 +178,93 @@
             <hr class="styled-hr">
             <img src="images/image2.jpg" alt="Band Image" class="band-image">
             <p>Shouts, Screams, Growls und Cleans... Und das aus zwei Kehlen wie sie
-            unterschiedlicher nicht sein könnten. ASURA FALLS, das sind 6
-            Vollblutmusiker aus dem Herzen Europas die mit melodischen Riffs, tiefen
-            Bässen, Drums die jede Bühne beben lassen und einer gemischten
-            Frontmauer die Welt des Metalcore auf den Kopf stellen. Inspiriert von
-            Genre-Größen wie Bullet For My Valentine oder Killswitch Engage ist hier
-            für jeden Freund der härteren Fraktion ein geiler Abend vorprogrammiert!
+                unterschiedlicher nicht sein könnten. ASURA FALLS, das sind 6
+                Vollblutmusiker aus dem Herzen Europas die mit melodischen Riffs, tiefen
+                Bässen, Drums die jede Bühne beben lassen und einer gemischten
+                Frontmauer die Welt des Metalcore auf den Kopf stellen. Inspiriert von
+                Genre-Größen wie Bullet For My Valentine oder Killswitch Engage ist hier
+                für jeden Freund der härteren Fraktion ein geiler Abend vorprogrammiert!
             </p>
         </section>
 
-       <section id="media">
-        <h2>Media</h2>
-        <hr class="styled-hr">
-   
-        <div class="video-container">
-            <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        <section id="media">
+            <h2>Media</h2>
+            <hr class="styled-hr">
+            <div class="video-container">
+                <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
 
-        <!-- Highlighted Gallery Button -->
-        <div class="gallery-link" style="text-align: center; margin-top: 30px;">
-            <a href="gallery.html" class="gallery-button" style="text-decoration: none;">
-                <button style="
-                    background-color: #1db954; /* Kräftige grüne Farbe */
-                    color: white;
-                    border: none;
-                    padding: 15px 30px;
-                    font-size: 1.2em;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
-                    cursor: pointer;
-                    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-                " onmouseover="this.style.backgroundColor='#17a94c'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#1db954'; this.style.transform='scale(1)';">
-                Explore Our Full Gallery
-            </button>
-        </a>
-    </div>
-</section>
-
+            <!-- Highlighted Gallery Button -->
+            <div class="gallery-link" style="text-align: center; margin-top: 30px;">
+                <a href="gallery.html" class="gallery-button" style="text-decoration: none;">
+                    <button style="
+                        background-color: #1db954; /* Kräftige grüne Farbe */
+                        color: white;
+                        border: none;
+                        padding: 15px 30px;
+                        font-size: 1.2em;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
+                        cursor: pointer;
+                        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+                    " onmouseover="this.style.backgroundColor='#17a94c'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#1db954'; this.style.transform='scale(1)';">
+                        Explore Our Full Gallery
+                    </button>
+                </a>
+            </div>
+        </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <hr class="styled-hr">
-            <p>If you have any questions or inquiries, feel free to reach out to us at <a href="mailto:info@asurafalls.de">info@asurafalls.de</a>.</p>
+            <p>If you want to reach out to us, feel free to send an email to <a href="mailto:info@asurafalls.de">info@asurafalls.de</a>.</p>
         </section>
 
-        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
-
         <footer>
-            <p>(C) 2024 Asura Falls. All rights reserved.</p>
-            <p><a href="impressum.html" style="color:white;">Impressum</a></p>
+            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
+            <p><a href="impressum.html">Impressum</a></p>
         </footer>
     </div>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
+
+    <div class="overlay" id="overlay">
+        <img id="overlayImage" src="" alt="Overlay Image">
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function openImage(src) {
-            document.getElementById('overlay-image').src = src;
-            document.getElementById('overlay').style.display = 'flex';
-        }
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById("backToTop");
 
-        function closeImage() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Back to top functionality
         window.onscroll = function () {
-            let button = document.querySelector('.back-to-top');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = 'block';
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
             } else {
-                button.style.display = 'none';
+                backToTopButton.style.display = "none";
             }
         };
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        backToTopButton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+
+        // Overlay functionality for image click
+        const overlay = document.getElementById("overlay");
+        const overlayImage = document.getElementById("overlayImage");
+
+        function showImage(src) {
+            overlayImage.src = src;
+            overlay.style.display = "flex";
         }
+
+        overlay.onclick = function () {
+            overlay.style.display = "none";
+        };
     </script>
 </body>
 
