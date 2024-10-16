@@ -14,22 +14,25 @@
     <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
     <meta name="author" content="Michael Grohs">
     <style>
-        body {
-        background-image: url('background.jpeg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: black; /* Falls das Bild nicht geladen werden kann */
-        position: relative;
-        filter: brightness(50%); /* Bild um 50% abdunkeln */
+       body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black; /* Falls das Bild nicht geladen werden kann */
+            position: relative;
         }
-        
-        section {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
-        padding: 20px;
-        border-radius: 10px; /* Abgerundete Ecken */
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
+            z-index: 1; /* Auf die richtige Schicht setzen */
         }
 
         .navbar,
