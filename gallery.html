@@ -120,7 +120,8 @@
         }
 
         /* Back to top button styling */
-        .back-to-top {
+        .back-to-top,
+        .back-to-main {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -133,6 +134,11 @@
             display: none; /* Initially hidden */
             z-index: 3; /* Höherer Z-Index für den Button */
         }
+
+        /* Adjusted position for back-to-main button */
+        .back-to-main {
+            bottom: 70px; /* Slightly above the back to top button */
+        }
     </style>
 </head>
 
@@ -140,7 +146,7 @@
 
     <nav id="navbar" class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Logo"> <!-- Logo hinzugefügt -->
+            <img src="images/logo.png" alt="Logo" style="height: 50px;"> <!-- Logo hinzugefügt und Größe angepasst -->
         </a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -319,54 +325,51 @@
                 <img src="images/image50.jpg" alt="Image 50">
             </div>
         </div>
-        <a href="index.html">
-            <button class="back-to-main">Back to Main Page</button>
-        </a>
     </section>
+
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    <button class="back-to-main" onclick="window.location.href='index.html'">Back to Main Page</button>
+
+    <div class="overlay" id="imageOverlay" onclick="hideImage()">
+        <img id="overlayImage" src="" alt="Expanded Image">
+    </div>
 
     <footer>
         <p>&copy; 2024 Asura Falls. All rights reserved.</p>
-        <p><a href="impressum.html">Impressum</a></p> <!-- Impressum verlinkt -->
+        <a href="impressum.html">Impressum</a>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">Back to Top</button>
-
-    <div class="overlay" id="overlay">
-        <img id="overlayImage" src="" alt="Overlay Image">
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Back to Top Button functionality
-        const backToTopButton = document.getElementById("backToTop");
-
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        backToTopButton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-
-        // Overlay functionality for image click
-        const overlay = document.getElementById("overlay");
-        const overlayImage = document.getElementById("overlayImage");
-
+        // Show image in overlay
         function showImage(src) {
-            overlayImage.src = src;
-            overlay.style.display = "flex";
+            document.getElementById('overlayImage').src = src;
+            document.getElementById('imageOverlay').style.display = 'flex';
         }
 
-        overlay.onclick = function () {
-            overlay.style.display = "none";
+        // Hide image overlay
+        function hideImage() {
+            document.getElementById('imageOverlay').style.display = 'none';
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide buttons on scroll
+        window.onscroll = function () {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            const backToMainBtn = document.querySelector('.back-to-main');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+                backToMainBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+                backToMainBtn.style.display = 'none';
+            }
         };
     </script>
 </body>
