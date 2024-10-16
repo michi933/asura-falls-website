@@ -1,64 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" href="images/monogram.png">
+    <link rel="icon" href="images/symbol.jpeg">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <title>Impressum - Asura Falls</title>
     <style>
         body {
-            background-color: black;
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black; /* Falls das Bild nicht geladen werden kann */
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
+            z-index: 1; /* Auf die richtige Schicht setzen */
+        }
+
+        section {
             color: white;
+            background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
+            padding: 20px;
+            border-radius: 10px; /* Abgerundete Ecken */
+            position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
+            z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
         }
 
-        .logo-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+            padding: 10px; /* Etwas mehr Polsterung für die Navbar */
+            border-radius: 10px; /* Abgerundete Ecken für die Navbar */
+            z-index: 3; /* Höherer Z-Index für die Navbar */
+            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
         }
 
-        .container {
-            margin-top: 20px;
+        .navbar .nav-link {
+            color: white; /* Schriftfarbe auf Weiß */
+            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
         }
 
-        .styled-hr {
-            border-color: white;
+        .navbar .nav-link:hover {
+            color: #1db954; /* Grüner Farbwechsel bei Hover */
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+            padding: 10px; /* Etwas mehr Polsterung für das Impressum */
+            border-radius: 10px; /* Abgerundete Ecken für das Impressum */
+            text-align: center; /* Text zentrieren */
+            color: white; /* Schriftfarbe auf Weiß */
+            z-index: 3; /* Höherer Z-Index für das Impressum */
+            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
+        }
+
+        footer a {
+            color: white; /* Sicherstellen, dass der Link Weiß ist */
+            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
+        }
+
+        footer a:hover {
+            color: #1db954; /* Grüner Farbwechsel bei Hover */
+        }
+
+        /* Back to top button styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            z-index: 3; /* Höherer Z-Index für den Button */
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="logo.png" alt="Logo Image" class="logo-image">
 
-        <h1>Impressum</h1>
+    <nav id="navbar" class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Logo"> <!-- Logo hinzugefügt -->
+        </a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#band">Band</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#media">Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="impressum.html">Impressum</a> <!-- Impressum verlinkt -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Impressum</h2>
         <hr class="styled-hr">
-        
-        <h2>Angaben gemäß § 5 TMG</h2>
         <p><strong>Name:</strong> Michael Grohs</p>
         <p><strong>Adresse:</strong> Schlesierstraße 3, 61381 Friedrichsdorf</p>
-        
-        <h2>Kontakt</h2>
-        <p><strong>Telefon:</strong> [Ihre Telefonnummer]</p>
-        <p><strong>E-Mail:</strong> <a href="mailto:info@asurafalls.de" style="color: #1db954">info@asurafalls.de</a></p>
+        <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
+    </section>
 
-        <h2>Haftungsausschluss</h2>
-        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Dienstanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
-        
-        <h2>Urheberrecht</h2>
-        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    <footer>
+        <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
+        <p><a href="impressum.html">Impressum</a></p> <!-- Impressum verlinkt -->
+    </footer>
 
-        <h2>Streitschlichtung</h2>
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-    </div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">Back to Top</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
 </body>
 
 </html>
