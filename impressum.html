@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,8 +17,9 @@
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: black; /* Falls das Bild nicht geladen werden kann */
+            background-color: black;
             position: relative;
+            color: white; /* Set default text color */
         }
 
         body::before {
@@ -28,70 +29,56 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
-            z-index: 1; /* Auf die richtige Schicht setzen */
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #1db954;
         }
 
         section {
             color: white;
-            background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
-            border-radius: 10px; /* Abgerundete Ecken */
-            position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
-            z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-            padding: 10px; /* Etwas mehr Polsterung für die Navbar */
-            border-radius: 10px; /* Abgerundete Ecken für die Navbar */
-            z-index: 3; /* Höherer Z-Index für die Navbar */
-            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
-        }
-
-        .navbar .nav-link {
-            color: white; /* Schriftfarbe auf Weiß */
-            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
-        }
-
-        .navbar .nav-link:hover {
-            color: #1db954; /* Grüner Farbwechsel bei Hover */
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+            margin: 20px;
         }
 
         footer {
-            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-            padding: 10px; /* Etwas mehr Polsterung für das Impressum */
-            border-radius: 10px; /* Abgerundete Ecken für das Impressum */
-            text-align: center; /* Text zentrieren */
-            color: white; /* Schriftfarbe auf Weiß */
-            z-index: 3; /* Höherer Z-Index für das Impressum */
-            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            position: relative;
         }
 
         footer a {
-            color: white; /* Sicherstellen, dass der Link Weiß ist */
-            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
+            color: white;
+            transition: color 0.2s;
         }
 
         footer a:hover {
-            color: #1db954; /* Grüner Farbwechsel bei Hover */
-        }
-
-        /* Back to top button styling */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1db954;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-            z-index: 3; /* Höherer Z-Index für den Button */
+            color: #1db954;
         }
     </style>
 </head>
@@ -100,7 +87,7 @@
 
     <nav id="navbar" class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Logo"> <!-- Logo hinzugefügt -->
+            <img src="images/logo.png" alt="Logo">
         </a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -117,7 +104,7 @@
                     <a class="nav-link" href="index.html#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="impressum.html">Impressum</a> <!-- Impressum verlinkt -->
+                    <a class="nav-link" href="gallery.html">Gallery</a>
                 </li>
             </ul>
         </div>
@@ -125,40 +112,18 @@
 
     <section>
         <h2>Impressum</h2>
-        <hr class="styled-hr">
         <p><strong>Name:</strong> Michael Grohs</p>
         <p><strong>Adresse:</strong> Schlesierstraße 3, 61381 Friedrichsdorf</p>
-        <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Asura Falls. All rights reserved.</p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Asura Falls. Alle Rechte vorbehalten.</p>
-        <p><a href="impressum.html">Impressum</a></p> <!-- Impressum verlinkt -->
+        <p><a href="impressum.html">Impressum</a></p>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">Back to Top</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Back to Top Button functionality
-        const backToTopButton = document.getElementById("backToTop");
-
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        backToTopButton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-    </script>
 </body>
 
 </html>
