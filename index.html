@@ -49,6 +49,8 @@
             backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
             padding: 10px; /* Etwas mehr Polsterung für die Navbar */
             border-radius: 10px; /* Abgerundete Ecken für die Navbar */
+            z-index: 3; /* Höherer Z-Index für die Navbar */
+            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
         }
 
         .navbar .nav-link {
@@ -67,6 +69,8 @@
             border-radius: 10px; /* Abgerundete Ecken für das Impressum */
             text-align: center; /* Text zentrieren */
             color: white; /* Schriftfarbe auf Weiß */
+            z-index: 3; /* Höherer Z-Index für das Impressum */
+            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
         }
 
         footer a {
@@ -128,6 +132,7 @@
             background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            z-index: 4; /* Höherer Z-Index für das Overlay */
         }
 
         .overlay img {
@@ -147,6 +152,7 @@
             padding: 10px 15px;
             cursor: pointer;
             display: none; /* Initially hidden */
+            z-index: 3; /* Höherer Z-Index für den Button */
         }
     </style>
 </head>
@@ -204,13 +210,17 @@
                         padding: 15px 30px;
                         font-size: 1.2em;
                         border-radius: 8px;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                         cursor: pointer;
-                        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-                    " onmouseover="this.style.backgroundColor='#17a94c'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#1db954'; this.style.transform='scale(1)';">
-                        Explore Our Full Gallery
-                    </button>
+                    ">Gallery</button>
                 </a>
+            </div>
+
+            <div class="social-icons">
+                <h3>Follow us on social media:</h3>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </section>
 
