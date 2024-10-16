@@ -13,7 +13,7 @@
     <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
     <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
     <meta name="author" content="Michael Grohs">
-   <style>
+  <style>
     body {
         background-image: url('background.jpeg');
         background-size: cover;
@@ -44,17 +44,37 @@
         z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
     }
 
-    .navbar,
-    .styled-hr {
-        border-color: white;
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+        backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+        padding: 10px; /* Etwas mehr Polsterung für die Navbar */
+        border-radius: 10px; /* Abgerundete Ecken für die Navbar */
     }
 
-    .nav-link {
+    .navbar .nav-link {
         color: white;
+        transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
     }
 
-    .nav-link:hover {
-        color: #1db954;
+    .navbar .nav-link:hover {
+        color: #1db954; /* Grüner Farbwechsel bei Hover */
+    }
+
+    footer {
+        background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+        backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
+        padding: 10px; /* Etwas mehr Polsterung für das Impressum */
+        border-radius: 10px; /* Abgerundete Ecken für das Impressum */
+        text-align: center; /* Text zentrieren */
+    }
+
+    footer a {
+        color: white;
+        transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
+    }
+
+    footer a:hover {
+        color: #1db954; /* Grüner Farbwechsel bei Hover */
     }
 
     .band-image,
