@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" href="images/symbol.jpg">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <title>Asura Falls - Gallery</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex-basis: calc(20% - 2px);
+            margin: 1px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gallery</h2>
+        <hr class="styled-hr">
+        <div class="gallery-container">
+            <!-- Paste the gallery items here -->
+            <div class="gallery-item" onclick="openImage('images/image1.jpg')">
+                <img src="images/image1.jpg" alt="Image 1">
+            </div>
+            <!-- Repeat for all images as in the original gallery code -->
+        </div>
+
+        <!-- Lightbox for image preview -->
+        <div class="overlay" id="overlay" onclick="closeImage()">
+            <img id="overlay-image" src="" alt="Overlay Image">
+        </div>
+
+        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    </div>
+
+    <script>
+        function openImage(src) {
+            document.getElementById('overlay-image').src = src;
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closeImage() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Back to top functionality
+        window.onscroll = function () {
+            let button = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
