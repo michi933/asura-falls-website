@@ -152,19 +152,34 @@
             </p>
         </section>
 
-        <section id="media">
-    <h2>Media</h2>
-    <hr class="styled-hr">
+       <section id="media">
+        <h2>Media</h2>
+        <hr class="styled-hr">
+   
+        <div class="video-container">
+            <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
 
-    <div class="video-container">
-        <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-    <!-- Link to the new gallery page -->
-    <div class="gallery-link">
-        <p>Check out our full <a href="gallery.html" style="color:white;">Gallery</a>.</p>
+        <!-- Highlighted Gallery Button -->
+        <div class="gallery-link" style="text-align: center; margin-top: 30px;">
+            <a href="gallery.html" class="gallery-button" style="text-decoration: none;">
+                <button style="
+                    background-color: #1db954; /* Kräftige grüne Farbe */
+                    color: white;
+                    border: none;
+                    padding: 15px 30px;
+                    font-size: 1.2em;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schatten für Tiefe */
+                    cursor: pointer;
+                    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+                " onmouseover="this.style.backgroundColor='#17a94c'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#1db954'; this.style.transform='scale(1)';">
+                Explore Our Full Gallery
+            </button>
+        </a>
     </div>
 </section>
+
 
         <section id="contact">
             <h2>Contact</h2>
