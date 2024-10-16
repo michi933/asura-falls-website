@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" href="images/symbol.jpg">
+    <link rel="icon" href="images/symbol.jpeg">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/gallery.css">
-    <title>Asura Falls - Gallery</title>
+    <title>Gallery - Asura Falls</title>
+    <meta name="description" content="Explore the gallery of Asura Falls.">
+    <meta name="keywords" content="Asura Falls, gallery, images, metal band">
+    <meta name="author" content="Michael Grohs">
     <style>
         body {
-            background-color: black;
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black; /* Falls das Bild nicht geladen werden kann */
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
+            z-index: 1; /* Auf die richtige Schicht setzen */
+        }
+
+        section {
             color: white;
+            background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
+            padding: 20px;
+            border-radius: 10px; /* Abgerundete Ecken */
+            position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
+            z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
+        }
+
+        .back-to-main {
+            background-color: #1db954; /* Kräftige grüne Farbe */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            text-decoration: none; /* Entfernen der Unterstreichung */
+            display: inline-block; /* Block-Element für bessere Button-Stil */
+            margin-top: 20px; /* Abstand zum oberen Element */
+        }
+
+        .back-to-main:hover {
+            background-color: #17a94c; /* Dunklerer Grünton beim Hover */
+            transform: scale(1.05); /* Kleine Vergrößerung beim Hover */
         }
 
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: flex-start; /* Align images to the left */
             margin-top: 20px;
         }
 
         .gallery-item {
-            flex-basis: calc(20% - 2px);
-            margin: 1px;
+            flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
+            margin: 1px; /* Small margin to prevent spacing issues */
         }
 
         .gallery-item img {
@@ -33,219 +80,100 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h2>Gallery</h2>
-        <hr class="styled-hr">
-        <div class="gallery-container">
-           <!-- Image Gallery -->
-                <!-- Images 1 to 50 -->
-                <div class="gallery-item" onclick="openImage('images/image1.jpg')">
-                    <img src="images/image1.jpg" alt="Image 1">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image2.jpg')">
-                    <img src="images/image2.jpg" alt="Image 2">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image3.jpg')">
-                    <img src="images/image3.jpg" alt="Image 3">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image4.jpg')">
-                    <img src="images/image4.jpg" alt="Image 4">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image5.jpg')">
-                    <img src="images/image5.jpg" alt="Image 5">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image6.jpg')">
-                    <img src="images/image6.jpg" alt="Image 6">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image7.jpg')">
-                    <img src="images/image7.jpg" alt="Image 7">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image8.jpg')">
-                    <img src="images/image8.jpg" alt="Image 8">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image9.jpg')">
-                    <img src="images/image9.jpg" alt="Image 9">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image10.jpg')">
-                    <img src="images/image10.jpg" alt="Image 10">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image11.jpg')">
-                    <img src="images/image11.jpg" alt="Image 11">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image12.jpg')">
-                    <img src="images/image12.jpg" alt="Image 12">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image13.jpg')">
-                    <img src="images/image13.jpg" alt="Image 13">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image14.jpg')">
-                    <img src="images/image14.jpg" alt="Image 14">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image15.jpg')">
-                    <img src="images/image15.jpg" alt="Image 15">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image16.jpg')">
-                    <img src="images/image16.jpg" alt="Image 16">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image17.jpg')">
-                    <img src="images/image17.jpg" alt="Image 17">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image18.jpg')">
-                    <img src="images/image18.jpg" alt="Image 18">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image19.jpg')">
-                    <img src="images/image19.jpg" alt="Image 19">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image20.jpg')">
-                    <img src="images/image20.jpg" alt="Image 20">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image21.jpg')">
-                    <img src="images/image21.jpg" alt="Image 21">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image22.jpg')">
-                    <img src="images/image22.jpg" alt="Image 22">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image23.jpg')">
-                    <img src="images/image23.jpg" alt="Image 23">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image24.jpg')">
-                    <img src="images/image24.jpg" alt="Image 24">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image25.jpg')">
-                    <img src="images/image25.jpg" alt="Image 25">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image26.jpg')">
-                    <img src="images/image26.jpg" alt="Image 26">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image27.jpg')">
-                    <img src="images/image27.jpg" alt="Image 27">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image28.jpg')">
-                    <img src="images/image28.jpg" alt="Image 28">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image29.jpg')">
-                    <img src="images/image29.jpg" alt="Image 29">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image30.jpg')">
-                    <img src="images/image30.jpg" alt="Image 30">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image31.jpg')">
-                    <img src="images/image31.jpg" alt="Image 31">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image32.jpg')">
-                    <img src="images/image32.jpg" alt="Image 32">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image33.jpg')">
-                    <img src="images/image33.jpg" alt="Image 33">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image34.jpg')">
-                    <img src="images/image34.jpg" alt="Image 34">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image35.jpg')">
-                    <img src="images/image35.jpg" alt="Image 35">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image36.jpg')">
-                    <img src="images/image36.jpg" alt="Image 36">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image37.jpg')">
-                    <img src="images/image37.jpg" alt="Image 37">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image38.jpg')">
-                    <img src="images/image38.jpg" alt="Image 38">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image39.jpg')">
-                    <img src="images/image39.jpg" alt="Image 39">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image40.jpg')">
-                    <img src="images/image40.jpg" alt="Image 40">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image41.jpg')">
-                    <img src="images/image41.jpg" alt="Image 41">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image42.jpg')">
-                    <img src="images/image42.jpg" alt="Image 42">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image43.jpg')">
-                    <img src="images/image43.jpg" alt="Image 43">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image44.jpg')">
-                    <img src="images/image44.jpg" alt="Image 44">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image45.jpg')">
-                    <img src="images/image45.jpg" alt="Image 45">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image46.jpg')">
-                    <img src="images/image46.jpg" alt="Image 46">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image47.jpg')">
-                    <img src="images/image47.jpg" alt="Image 47">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image48.jpg')">
-                    <img src="images/image48.jpg" alt="Image 48">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image49.jpg')">
-                    <img src="images/image49.jpg" alt="Image 49">
-                </div>
-                <div class="gallery-item" onclick="openImage('images/image50.jpg')">
-                    <img src="images/image50.jpg" alt="Image 50">
-                </div>
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="impressum.html">Impressum</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
 
-        <!-- Lightbox for image preview -->
-        <div class="overlay" id="overlay" onclick="closeImage()">
-            <img id="overlay-image" src="" alt="Overlay Image">
-        </div>
+        <section>
+            <h2>Gallery</h2>
+            <hr class="styled-hr">
 
-        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+            <div class="gallery-container">
+                <!-- Bilder von 1 bis 50 -->
+                <div class="gallery-item"><img src="images/image1.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="images/image2.jpg" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="images/image3.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="images/image4.jpg" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="images/image5.jpg" alt="Gallery Image 5"></div>
+                <div class="gallery-item"><img src="images/image6.jpg" alt="Gallery Image 6"></div>
+                <div class="gallery-item"><img src="images/image7.jpg" alt="Gallery Image 7"></div>
+                <div class="gallery-item"><img src="images/image8.jpg" alt="Gallery Image 8"></div>
+                <div class="gallery-item"><img src="images/image9.jpg" alt="Gallery Image 9"></div>
+                <div class="gallery-item"><img src="images/image10.jpg" alt="Gallery Image 10"></div>
+                <div class="gallery-item"><img src="images/image11.jpg" alt="Gallery Image 11"></div>
+                <div class="gallery-item"><img src="images/image12.jpg" alt="Gallery Image 12"></div>
+                <div class="gallery-item"><img src="images/image13.jpg" alt="Gallery Image 13"></div>
+                <div class="gallery-item"><img src="images/image14.jpg" alt="Gallery Image 14"></div>
+                <div class="gallery-item"><img src="images/image15.jpg" alt="Gallery Image 15"></div>
+                <div class="gallery-item"><img src="images/image16.jpg" alt="Gallery Image 16"></div>
+                <div class="gallery-item"><img src="images/image17.jpg" alt="Gallery Image 17"></div>
+                <div class="gallery-item"><img src="images/image18.jpg" alt="Gallery Image 18"></div>
+                <div class="gallery-item"><img src="images/image19.jpg" alt="Gallery Image 19"></div>
+                <div class="gallery-item"><img src="images/image20.jpg" alt="Gallery Image 20"></div>
+                <div class="gallery-item"><img src="images/image21.jpg" alt="Gallery Image 21"></div>
+                <div class="gallery-item"><img src="images/image22.jpg" alt="Gallery Image 22"></div>
+                <div class="gallery-item"><img src="images/image23.jpg" alt="Gallery Image 23"></div>
+                <div class="gallery-item"><img src="images/image24.jpg" alt="Gallery Image 24"></div>
+                <div class="gallery-item"><img src="images/image25.jpg" alt="Gallery Image 25"></div>
+                <div class="gallery-item"><img src="images/image26.jpg" alt="Gallery Image 26"></div>
+                <div class="gallery-item"><img src="images/image27.jpg" alt="Gallery Image 27"></div>
+                <div class="gallery-item"><img src="images/image28.jpg" alt="Gallery Image 28"></div>
+                <div class="gallery-item"><img src="images/image29.jpg" alt="Gallery Image 29"></div>
+                <div class="gallery-item"><img src="images/image30.jpg" alt="Gallery Image 30"></div>
+                <div class="gallery-item"><img src="images/image31.jpg" alt="Gallery Image 31"></div>
+                <div class="gallery-item"><img src="images/image32.jpg" alt="Gallery Image 32"></div>
+                <div class="gallery-item"><img src="images/image33.jpg" alt="Gallery Image 33"></div>
+                <div class="gallery-item"><img src="images/image34.jpg" alt="Gallery Image 34"></div>
+                <div class="gallery-item"><img src="images/image35.jpg" alt="Gallery Image 35"></div>
+                <div class="gallery-item"><img src="images/image36.jpg" alt="Gallery Image 36"></div>
+                <div class="gallery-item"><img src="images/image37.jpg" alt="Gallery Image 37"></div>
+                <div class="gallery-item"><img src="images/image38.jpg" alt="Gallery Image 38"></div>
+                <div class="gallery-item"><img src="images/image39.jpg" alt="Gallery Image 39"></div>
+                <div class="gallery-item"><img src="images/image40.jpg" alt="Gallery Image 40"></div>
+                <div class="gallery-item"><img src="images/image41.jpg" alt="Gallery Image 41"></div>
+                <div class="gallery-item"><img src="images/image42.jpg" alt="Gallery Image 42"></div>
+                <div class="gallery-item"><img src="images/image43.jpg" alt="Gallery Image 43"></div>
+                <div class="gallery-item"><img src="images/image44.jpg" alt="Gallery Image 44"></div>
+                <div class="gallery-item"><img src="images/image45.jpg" alt="Gallery Image 45"></div>
+                <div class="gallery-item"><img src="images/image46.jpg" alt="Gallery Image 46"></div>
+                <div class="gallery-item"><img src="images/image47.jpg" alt="Gallery Image 47"></div>
+                <div class="gallery-item"><img src="images/image48.jpg" alt="Gallery Image 48"></div>
+                <div class="gallery-item"><img src="images/image49.jpg" alt="Gallery Image 49"></div>
+                <div class="gallery-item"><img src="images/image50.jpg" alt="Gallery Image 50"></div>
+            </div>
+
+            <a href="index.html" class="back-to-main">Zur Hauptseite zurück</a>
+        </section>
+
+        <footer>
+            <p>(C) 2024 Asura Falls. All rights reserved.</p>
+            <p><a href="impressum.html" style="color:white;">Impressum</a></p>
+        </footer>
     </div>
 
-    <script>
-        function openImage(src) {
-            document.getElementById('overlay-image').src = src;
-            document.getElementById('overlay').style.display = 'flex';
-        }
-
-        function closeImage() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Back to top functionality
-        window.onscroll = function () {
-            let button = document.querySelector('.back-to-top');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = 'block';
-            } else {
-                button.style.display = 'none';
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
