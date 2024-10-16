@@ -7,7 +7,6 @@
     <link rel="icon" href="images/symbol.jpeg">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/gallery.css">
     <title>Gallery - Asura Falls</title>
@@ -80,6 +79,13 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer; /* Zeigt an, dass das Bild klickbar ist */
+        }
+
+        /* Modal styles */
+        .modal-content {
+            background-color: transparent; /* Transparenter Hintergrund für das Bild */
+            border: none; /* Keine Ränder um das Bild */
         }
     </style>
 </head>
@@ -110,61 +116,70 @@
             <hr class="styled-hr">
 
             <div class="gallery-container">
-                <!-- Bilder von 1 bis 50 mit Lightbox -->
-                <div class="gallery-item"><a href="images/image1.jpg" data-lightbox="gallery" data-title="Gallery Image 1"><img src="images/image1.jpg" alt="Gallery Image 1"></a></div>
-                <div class="gallery-item"><a href="images/image2.jpg" data-lightbox="gallery" data-title="Gallery Image 2"><img src="images/image2.jpg" alt="Gallery Image 2"></a></div>
-                <div class="gallery-item"><a href="images/image3.jpg" data-lightbox="gallery" data-title="Gallery Image 3"><img src="images/image3.jpg" alt="Gallery Image 3"></a></div>
-                <div class="gallery-item"><a href="images/image4.jpg" data-lightbox="gallery" data-title="Gallery Image 4"><img src="images/image4.jpg" alt="Gallery Image 4"></a></div>
-                <div class="gallery-item"><a href="images/image5.jpg" data-lightbox="gallery" data-title="Gallery Image 5"><img src="images/image5.jpg" alt="Gallery Image 5"></a></div>
-                <div class="gallery-item"><a href="images/image6.jpg" data-lightbox="gallery" data-title="Gallery Image 6"><img src="images/image6.jpg" alt="Gallery Image 6"></a></div>
-                <div class="gallery-item"><a href="images/image7.jpg" data-lightbox="gallery" data-title="Gallery Image 7"><img src="images/image7.jpg" alt="Gallery Image 7"></a></div>
-                <div class="gallery-item"><a href="images/image8.jpg" data-lightbox="gallery" data-title="Gallery Image 8"><img src="images/image8.jpg" alt="Gallery Image 8"></a></div>
-                <div class="gallery-item"><a href="images/image9.jpg" data-lightbox="gallery" data-title="Gallery Image 9"><img src="images/image9.jpg" alt="Gallery Image 9"></a></div>
-                <div class="gallery-item"><a href="images/image10.jpg" data-lightbox="gallery" data-title="Gallery Image 10"><img src="images/image10.jpg" alt="Gallery Image 10"></a></div>
-                <div class="gallery-item"><a href="images/image11.jpg" data-lightbox="gallery" data-title="Gallery Image 11"><img src="images/image11.jpg" alt="Gallery Image 11"></a></div>
-                <div class="gallery-item"><a href="images/image12.jpg" data-lightbox="gallery" data-title="Gallery Image 12"><img src="images/image12.jpg" alt="Gallery Image 12"></a></div>
-                <div class="gallery-item"><a href="images/image13.jpg" data-lightbox="gallery" data-title="Gallery Image 13"><img src="images/image13.jpg" alt="Gallery Image 13"></a></div>
-                <div class="gallery-item"><a href="images/image14.jpg" data-lightbox="gallery" data-title="Gallery Image 14"><img src="images/image14.jpg" alt="Gallery Image 14"></a></div>
-                <div class="gallery-item"><a href="images/image15.jpg" data-lightbox="gallery" data-title="Gallery Image 15"><img src="images/image15.jpg" alt="Gallery Image 15"></a></div>
-                <div class="gallery-item"><a href="images/image16.jpg" data-lightbox="gallery" data-title="Gallery Image 16"><img src="images/image16.jpg" alt="Gallery Image 16"></a></div>
-                <div class="gallery-item"><a href="images/image17.jpg" data-lightbox="gallery" data-title="Gallery Image 17"><img src="images/image17.jpg" alt="Gallery Image 17"></a></div>
-                <div class="gallery-item"><a href="images/image18.jpg" data-lightbox="gallery" data-title="Gallery Image 18"><img src="images/image18.jpg" alt="Gallery Image 18"></a></div>
-                <div class="gallery-item"><a href="images/image19.jpg" data-lightbox="gallery" data-title="Gallery Image 19"><img src="images/image19.jpg" alt="Gallery Image 19"></a></div>
-                <div class="gallery-item"><a href="images/image20.jpg" data-lightbox="gallery" data-title="Gallery Image 20"><img src="images/image20.jpg" alt="Gallery Image 20"></a></div>
-                <div class="gallery-item"><a href="images/image21.jpg" data-lightbox="gallery" data-title="Gallery Image 21"><img src="images/image21.jpg" alt="Gallery Image 21"></a></div>
-                <div class="gallery-item"><a href="images/image22.jpg" data-lightbox="gallery" data-title="Gallery Image 22"><img src="images/image22.jpg" alt="Gallery Image 22"></a></div>
-                <div class="gallery-item"><a href="images/image23.jpg" data-lightbox="gallery" data-title="Gallery Image 23"><img src="images/image23.jpg" alt="Gallery Image 23"></a></div>
-                <div class="gallery-item"><a href="images/image24.jpg" data-lightbox="gallery" data-title="Gallery Image 24"><img src="images/image24.jpg" alt="Gallery Image 24"></a></div>
-                <div class="gallery-item"><a href="images/image25.jpg" data-lightbox="gallery" data-title="Gallery Image 25"><img src="images/image25.jpg" alt="Gallery Image 25"></a></div>
-                <div class="gallery-item"><a href="images/image26.jpg" data-lightbox="gallery" data-title="Gallery Image 26"><img src="images/image26.jpg" alt="Gallery Image 26"></a></div>
-                <div class="gallery-item"><a href="images/image27.jpg" data-lightbox="gallery" data-title="Gallery Image 27"><img src="images/image27.jpg" alt="Gallery Image 27"></a></div>
-                <div class="gallery-item"><a href="images/image28.jpg" data-lightbox="gallery" data-title="Gallery Image 28"><img src="images/image28.jpg" alt="Gallery Image 28"></a></div>
-                <div class="gallery-item"><a href="images/image29.jpg" data-lightbox="gallery" data-title="Gallery Image 29"><img src="images/image29.jpg" alt="Gallery Image 29"></a></div>
-                <div class="gallery-item"><a href="images/image30.jpg" data-lightbox="gallery" data-title="Gallery Image 30"><img src="images/image30.jpg" alt="Gallery Image 30"></a></div>
-                <div class="gallery-item"><a href="images/image31.jpg" data-lightbox="gallery" data-title="Gallery Image 31"><img src="images/image31.jpg" alt="Gallery Image 31"></a></div>
-                <div class="gallery-item"><a href="images/image32.jpg" data-lightbox="gallery" data-title="Gallery Image 32"><img src="images/image32.jpg" alt="Gallery Image 32"></a></div>
-                <div class="gallery-item"><a href="images/image33.jpg" data-lightbox="gallery" data-title="Gallery Image 33"><img src="images/image33.jpg" alt="Gallery Image 33"></a></div>
-                <div class="gallery-item"><a href="images/image34.jpg" data-lightbox="gallery" data-title="Gallery Image 34"><img src="images/image34.jpg" alt="Gallery Image 34"></a></div>
-                <div class="gallery-item"><a href="images/image35.jpg" data-lightbox="gallery" data-title="Gallery Image 35"><img src="images/image35.jpg" alt="Gallery Image 35"></a></div>
-                <div class="gallery-item"><a href="images/image36.jpg" data-lightbox="gallery" data-title="Gallery Image 36"><img src="images/image36.jpg" alt="Gallery Image 36"></a></div>
-                <div class="gallery-item"><a href="images/image37.jpg" data-lightbox="gallery" data-title="Gallery Image 37"><img src="images/image37.jpg" alt="Gallery Image 37"></a></div>
-                <div class="gallery-item"><a href="images/image38.jpg" data-lightbox="gallery" data-title="Gallery Image 38"><img src="images/image38.jpg" alt="Gallery Image 38"></a></div>
-                <div class="gallery-item"><a href="images/image39.jpg" data-lightbox="gallery" data-title="Gallery Image 39"><img src="images/image39.jpg" alt="Gallery Image 39"></a></div>
-                <div class="gallery-item"><a href="images/image40.jpg" data-lightbox="gallery" data-title="Gallery Image 40"><img src="images/image40.jpg" alt="Gallery Image 40"></a></div>
-                <div class="gallery-item"><a href="images/image41.jpg" data-lightbox="gallery" data-title="Gallery Image 41"><img src="images/image41.jpg" alt="Gallery Image 41"></a></div>
-                <div class="gallery-item"><a href="images/image42.jpg" data-lightbox="gallery" data-title="Gallery Image 42"><img src="images/image42.jpg" alt="Gallery Image 42"></a></div>
-                <div class="gallery-item"><a href="images/image43.jpg" data-lightbox="gallery" data-title="Gallery Image 43"><img src="images/image43.jpg" alt="Gallery Image 43"></a></div>
-                <div class="gallery-item"><a href="images/image44.jpg" data-lightbox="gallery" data-title="Gallery Image 44"><img src="images/image44.jpg" alt="Gallery Image 44"></a></div>
-                <div class="gallery-item"><a href="images/image45.jpg" data-lightbox="gallery" data-title="Gallery Image 45"><img src="images/image45.jpg" alt="Gallery Image 45"></a></div>
-                <div class="gallery-item"><a href="images/image46.jpg" data-lightbox="gallery" data-title="Gallery Image 46"><img src="images/image46.jpg" alt="Gallery Image 46"></a></div>
-                <div class="gallery-item"><a href="images/image47.jpg" data-lightbox="gallery" data-title="Gallery Image 47"><img src="images/image47.jpg" alt="Gallery Image 47"></a></div>
-                <div class="gallery-item"><a href="images/image48.jpg" data-lightbox="gallery" data-title="Gallery Image 48"><img src="images/image48.jpg" alt="Gallery Image 48"></a></div>
-                <div class="gallery-item"><a href="images/image49.jpg" data-lightbox="gallery" data-title="Gallery Image 49"><img src="images/image49.jpg" alt="Gallery Image 49"></a></div>
-                <div class="gallery-item"><a href="images/image50.jpg" data-lightbox="gallery" data-title="Gallery Image 50"><img src="images/image50.jpg" alt="Gallery Image 50"></a></div>
+                <!-- Bilder von 1 bis 50 mit modaler Anzeige -->
+                <div class="gallery-item"><img src="images/image1.jpg" alt="Gallery Image 1" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image1.jpg')"></div>
+                <div class="gallery-item"><img src="images/image2.jpg" alt="Gallery Image 2" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image2.jpg')"></div>
+                <div class="gallery-item"><img src="images/image3.jpg" alt="Gallery Image 3" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image3.jpg')"></div>
+                <div class="gallery-item"><img src="images/image4.jpg" alt="Gallery Image 4" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image4.jpg')"></div>
+                <div class="gallery-item"><img src="images/image5.jpg" alt="Gallery Image 5" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image5.jpg')"></div>
+                <div class="gallery-item"><img src="images/image6.jpg" alt="Gallery Image 6" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image6.jpg')"></div>
+                <div class="gallery-item"><img src="images/image7.jpg" alt="Gallery Image 7" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image7.jpg')"></div>
+                <div class="gallery-item"><img src="images/image8.jpg" alt="Gallery Image 8" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image8.jpg')"></div>
+                <div class="gallery-item"><img src="images/image9.jpg" alt="Gallery Image 9" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image9.jpg')"></div>
+                <div class="gallery-item"><img src="images/image10.jpg" alt="Gallery Image 10" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image10.jpg')"></div>
+                <div class="gallery-item"><img src="images/image11.jpg" alt="Gallery Image 11" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image11.jpg')"></div>
+                <div class="gallery-item"><img src="images/image12.jpg" alt="Gallery Image 12" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image12.jpg')"></div>
+                <div class="gallery-item"><img src="images/image13.jpg" alt="Gallery Image 13" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image13.jpg')"></div>
+                <div class="gallery-item"><img src="images/image14.jpg" alt="Gallery Image 14" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image14.jpg')"></div>
+                <div class="gallery-item"><img src="images/image15.jpg" alt="Gallery Image 15" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image15.jpg')"></div>
+                <div class="gallery-item"><img src="images/image16.jpg" alt="Gallery Image 16" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image16.jpg')"></div>
+                <div class="gallery-item"><img src="images/image17.jpg" alt="Gallery Image 17" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image17.jpg')"></div>
+                <div class="gallery-item"><img src="images/image18.jpg" alt="Gallery Image 18" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image18.jpg')"></div>
+                <div class="gallery-item"><img src="images/image19.jpg" alt="Gallery Image 19" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image19.jpg')"></div>
+                <div class="gallery-item"><img src="images/image20.jpg" alt="Gallery Image 20" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image20.jpg')"></div>
+                <div class="gallery-item"><img src="images/image21.jpg" alt="Gallery Image 21" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image21.jpg')"></div>
+                <div class="gallery-item"><img src="images/image22.jpg" alt="Gallery Image 22" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image22.jpg')"></div>
+                <div class="gallery-item"><img src="images/image23.jpg" alt="Gallery Image 23" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image23.jpg')"></div>
+                <div class="gallery-item"><img src="images/image24.jpg" alt="Gallery Image 24" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image24.jpg')"></div>
+                <div class="gallery-item"><img src="images/image25.jpg" alt="Gallery Image 25" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image25.jpg')"></div>
+                <div class="gallery-item"><img src="images/image26.jpg" alt="Gallery Image 26" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image26.jpg')"></div>
+                <div class="gallery-item"><img src="images/image27.jpg" alt="Gallery Image 27" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image27.jpg')"></div>
+                <div class="gallery-item"><img src="images/image28.jpg" alt="Gallery Image 28" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image28.jpg')"></div>
+                <div class="gallery-item"><img src="images/image29.jpg" alt="Gallery Image 29" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image29.jpg')"></div>
+                <div class="gallery-item"><img src="images/image30.jpg" alt="Gallery Image 30" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image30.jpg')"></div>
+                <div class="gallery-item"><img src="images/image31.jpg" alt="Gallery Image 31" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image31.jpg')"></div>
+                <div class="gallery-item"><img src="images/image32.jpg" alt="Gallery Image 32" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image32.jpg')"></div>
+                <div class="gallery-item"><img src="images/image33.jpg" alt="Gallery Image 33" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image33.jpg')"></div>
+                <div class="gallery-item"><img src="images/image34.jpg" alt="Gallery Image 34" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image34.jpg')"></div>
+                <div class="gallery-item"><img src="images/image35.jpg" alt="Gallery Image 35" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image35.jpg')"></div>
+                <div class="gallery-item"><img src="images/image36.jpg" alt="Gallery Image 36" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image36.jpg')"></div>
+                <div class="gallery-item"><img src="images/image37.jpg" alt="Gallery Image 37" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image37.jpg')"></div>
+                <div class="gallery-item"><img src="images/image38.jpg" alt="Gallery Image 38" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image38.jpg')"></div>
+                <div class="gallery-item"><img src="images/image39.jpg" alt="Gallery Image 39" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image39.jpg')"></div>
+                <div class="gallery-item"><img src="images/image40.jpg" alt="Gallery Image 40" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image40.jpg')"></div>
+                <div class="gallery-item"><img src="images/image41.jpg" alt="Gallery Image 41" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image41.jpg')"></div>
+                <div class="gallery-item"><img src="images/image42.jpg" alt="Gallery Image 42" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image42.jpg')"></div>
+                <div class="gallery-item"><img src="images/image43.jpg" alt="Gallery Image 43" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image43.jpg')"></div>
+                <div class="gallery-item"><img src="images/image44.jpg" alt="Gallery Image 44" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image44.jpg')"></div>
+                <div class="gallery-item"><img src="images/image45.jpg" alt="Gallery Image 45" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image45.jpg')"></div>
+                <div class="gallery-item"><img src="images/image46.jpg" alt="Gallery Image 46" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image46.jpg')"></div>
+                <div class="gallery-item"><img src="images/image47.jpg" alt="Gallery Image 47" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image47.jpg')"></div>
+                <div class="gallery-item"><img src="images/image48.jpg" alt="Gallery Image 48" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image48.jpg')"></div>
+                <div class="gallery-item"><img src="images/image49.jpg" alt="Gallery Image 49" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image49.jpg')"></div>
+                <div class="gallery-item"><img src="images/image50.jpg" alt="Gallery Image 50" data-toggle="modal" data-target="#imageModal" onclick="showImage('images/image50.jpg')"></div>
             </div>
 
             <a href="index.html" class="back-to-main">Zur Hauptseite zurück</a>
         </section>
+
+        <!-- Modal für die Bildanzeige -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <img id="modalImage" src="" alt="Selected Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
 
         <footer>
             <p>(C) 2024 Asura Falls. All rights reserved.</p>
@@ -175,7 +190,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        function showImage(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+        }
+    </script>
 </body>
 
 </html>
