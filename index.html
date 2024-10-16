@@ -13,112 +13,122 @@
     <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
     <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
     <meta name="author" content="Michael Grohs">
-    <style>
-       body {
-            background-image: url('background.jpeg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: black; /* Falls das Bild nicht geladen werden kann */
-            position: relative;
-        }
+   <style>
+    body {
+        background-image: url('background.jpeg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: black; /* Falls das Bild nicht geladen werden kann */
+        position: relative;
+    }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
-            z-index: 1; /* Auf die richtige Schicht setzen */
-        }
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
+        z-index: 1; /* Auf die richtige Schicht setzen */
+    }
 
-        .navbar,
-        .styled-hr {
-            border-color: white;
-        }
+    section {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
+        padding: 20px;
+        border-radius: 10px; /* Abgerundete Ecken */
+        position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
+        z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
+    }
 
-        .nav-link {
-            color: white;
-        }
+    .navbar,
+    .styled-hr {
+        border-color: white;
+    }
 
-        .nav-link:hover {
-            color: #1db954;
-        }
+    .nav-link {
+        color: white;
+    }
 
-        .band-image,
-        .logo-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    .nav-link:hover {
+        color: #1db954;
+    }
 
-        /* Gallery styling */
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start; /* Align images to the left */
-            margin-top: 20px;
-        }
+    .band-image,
+    .logo-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 
-        .gallery-item {
-            flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
-            margin: 1px; /* Small margin to prevent spacing issues */
-        }
+    /* Gallery styling */
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Align images to the left */
+        margin-top: 20px;
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
+    .gallery-item {
+        flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
+        margin: 1px; /* Small margin to prevent spacing issues */
+    }
 
-        /* Social media icons styling */
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
 
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-        }
+    /* Social media icons styling */
+    .social-icons {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
+    .social-icons a {
+        color: white;
+        margin: 0 10px;
+        font-size: 24px;
+    }
 
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
 
-        /* Back to top button styling */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1db954;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-        }
-    </style>
+    .overlay img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    /* Back to top button styling */
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #1db954;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: none; /* Initially hidden */
+    }
+</style>
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="200">
