@@ -80,6 +80,22 @@
         footer a:hover {
             color: #1db954;
         }
+
+        .back-to-main {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(29, 185, 84, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            z-index: 4;
+        }
+
+        .back-to-main:hover {
+            background-color: rgba(29, 185, 84, 1);
+        }
     </style>
 </head>
 
@@ -120,6 +136,8 @@
     <footer>
         <p><a href="impressum.html">Impressum</a></p>
     </footer>
+
+    <button class="back-to-main" onclick="window.location.href='index.html'">Back to Main Page</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
