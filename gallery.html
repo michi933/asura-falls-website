@@ -154,26 +154,6 @@
         .category-buttons button.active {
             background-color: #0f9947;
         }
-        .nav-button {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-}
-
-#prevImage {
-    left: 20px;
-}
-
-#nextImage {
-    right: 20px;
-}
-
     </style>
 </head>
 
@@ -297,10 +277,6 @@
             <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz25.jpg')">
                 <img src="images/schanz/schanz25.jpg" alt="Schanz Image 25">
             </div>
-<div class="navigation">
-    <button id="prevImage" class="nav-button" onclick="prevImage()"><i class="fas fa-arrow-left"></i></button>
-    <button id="nextImage" class="nav-button" onclick="nextImage()"><i class="fas fa-arrow-right"></i></button>
-</div>
 
             <!-- Ponyhof Images -->
             <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof1.jpg')">
@@ -352,10 +328,6 @@
                 <img src="images/ponyhof/ponyhof16.jpg" alt="Ponyhof Image 16">
             </div>
         </div>
-<div class="navigation">
-    <button id="prevImage" class="nav-button" onclick="prevImage()"><i class="fas fa-arrow-left"></i></button>
-    <button id="nextImage" class="nav-button" onclick="nextImage()"><i class="fas fa-arrow-right"></i></button>
-</div>
 
     </section>
 
@@ -425,49 +397,6 @@
         });
 
         showCategory('schanz');
-        let currentIndex = 0; // Start mit dem ersten Bild
-const images = document.querySelectorAll('.gallery-item img'); // Alle Bilder in der Galerie
-
-function showImage(src) {
-    const overlay = document.getElementById("overlay");
-    const overlayImage = document.getElementById("overlayImage");
-    overlay.style.display = "flex";
-    overlayImage.src = src;
-
-    // Setze den aktuellen Index
-    currentIndex = Array.from(images).findIndex(img => img.src.includes(src));
-    updateNavButtons();
-}
-
-function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length; // Nächster Index
-    showImage(images[currentIndex].src); // Zeige das nächste Bild
-}
-
-function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length; // Vorheriger Index
-    showImage(images[currentIndex].src); // Zeige das vorherige Bild
-}
-
-// Event-Listener für Tastendruck hinzufügen
-window.addEventListener('keydown', (event) => {
-    if (event.key === "ArrowRight") {
-        nextImage();
-    } else if (event.key === "ArrowLeft") {
-        prevImage();
-    }
-});
-
-function updateNavButtons() {
-    document.getElementById('prevImage').style.display = currentIndex === 0 ? 'none' : 'block';
-    document.getElementById('nextImage').style.display = currentIndex === images.length - 1 ? 'none' : 'block';
-}
-
-// Overlay-Click um das Bild zu schließen
-document.getElementById("overlay").addEventListener("click", () => {
-    document.getElementById("overlay").style.display = "none";
-});
-
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
