@@ -160,6 +160,30 @@
             display: none; /* Initially hidden */
             z-index: 3; /* Höherer Z-Index für den Button */
         }
+        /* Ensure the text in the slideshow is visible on mobile */
+.carousel-caption {
+    display: block !important;
+    background-color: rgba(0, 0, 0, 0.7); /* Make captions more readable */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Reduce slideshow image size on larger screens */
+@media (min-width: 992px) {
+    .carousel-inner img {
+        max-height: 500px; /* Adjust the height as per your preference */
+        object-fit: cover;
+    }
+}
+
+/* Full size on mobile */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        width: 100%; /* Ensure full width on mobile */
+        height: auto;
+    }
+}
+
     </style>
 </head>
 
@@ -217,37 +241,37 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="images/band/jenny.jpg" class="d-block w-100" alt="Jenny">
-                <div class="carousel-caption d-none d-md-block">
+             
                     <h5>Even as a young child, Jenny liked to be on stage, no matter where she was, if she liked a song, she sang along and danced to it. In her youth, she was inspired by Linkin Park, Green Day, Bullet for my Valentine. Her current role models include "In This Moment" singer Maria Brink and "Beyond the Black" singer Jennifer Haben. With her engaging stage presence and convincing voice ranging from gentle and empathetic to heavy and aggressive. She joined this year in February as the last member and made us complete with our sound.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/nemo.jpg" class="d-block w-100" alt="Nemo">
-                <div class="carousel-caption d-none d-md-block">
+     
                     <h5>Nemo discovered his love for music at an early age and now, many years later, he has been the frontman of Asura Falls since February of this year. With 14 years of experience as a shouter, rapper and lyricist, he provides the necessary hardness with his unmistakable style and voice and moves forward without compromise.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/jonas.jpg" class="d-block w-100" alt="Jonas">
-                <div class="carousel-caption d-none d-md-block">
+
                     <h5>Inspired by his music teacher, Jonas started his musical career relatively late, but all the more determined. His journey and with it the search for his own sound began with influences such as In Flames, Caliban, and Insomnium. Armed with 8 strings and his songwriting, Jonas lays a foundation of heaviness and melancholy on which the band builds its songs. Even if he is rarely in the foreground, he is irreplaceable as a rhythm guitarist and “the band's own tech guy” and contributes significantly to the band's sound.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/conz.jpg" class="d-block w-100" alt="Conz">
-                <div class="carousel-caption d-none d-md-block">
+
                     <h5>Since the very beginning, Cons has been a founding member, lead guitarist and therefore the “veteran” of our band.He has been playing guitar since he was 8 years old and his influences from classic blues and metal make him a significant contributor to the typical “Asura sound”. Inspired by modern core bands, he transforms ideas into melodic riffs and accompanies them with synth sounds.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/suri.jpg" class="d-block w-100" alt="Suri">
-                <div class="carousel-caption d-none d-md-block">
+
                     <h5>Sueri discovered his passion for deep tones at the age of 14 and his roots in the early 2000s skatepunk. After a long break, he has been an integral member of Asura Falls since 2016 and, as the esteemed bassist of our band, provides the essential foundation that allows our music to be felt.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/dennis.jpg" class="d-block w-100" alt="Dennis">
-                <div class="carousel-caption d-none d-md-block">
+
                     <h5>Dennis has been sitting on the drums since 2020, with bands like Linkin Park and Bullet For My Valentine, he has found his way from ordinary rock to metal early on and has been feeling most comfortable in the core area ever since. Keeping still behind the drums is a foreign word to him and if you don't sweat, something goes wrong. Armed with double bass and China, he gets people moving in the moshpit and as the band's pacesetter, the rest must be able to rely on him. It is with a heavy heart that we must announce that he will leave us in November. If you think you have what it takes to take on Dennis' heir, get in touch with us!</h5>
                 </div>
             </div>
