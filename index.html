@@ -183,6 +183,13 @@
 .carousel-control-next {
     bottom: 20px; /* Abstand vom unteren Rand des Containers */
 }
+        .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px; /* Abstand zum oberen Element */
+}
 /* Reduce slideshow image size on larger screens */
 @media (min-width: 992px) {
     .carousel-inner img {
@@ -238,7 +245,7 @@
     <!-- Slideshow Container -->
     <div id="bandSlideshow" class="carousel slide" data-ride="carousel">
         <!-- Slideshow Indicators -->
-        <ul class="carousel-indicators">
+        <ul class="carousel-indicators" style="margin-top: 20px;">
             <li data-target="#bandSlideshow" data-slide-to="0" class="active"></li>
             <li data-target="#bandSlideshow" data-slide-to="1"></li>
             <li data-target="#bandSlideshow" data-slide-to="2"></li>
