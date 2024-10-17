@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" href="images/symbol.jpeg">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <title>Gallery - Asura Falls</title>
+    <style>
+        body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        section {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #1db954;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            position: relative;
+        }
+
+        footer a {
+            color: white;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #1db954;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex-basis: calc(20% - 2px);
+            margin: 1px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 4;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .back-to-top,
+        .back-to-main {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+            z-index: 5;
+        }
+
+        .back-to-main {
+            bottom: 80px;
+        }
+
+        .category-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .category-buttons button {
+            background-color: #1db954;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .category-buttons button.active {
+            background-color: #0f9947;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Logo" style="height: 50px;">
+        </a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#band">Band</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#media">Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Gallery</h2>
+        <hr class="styled-hr">
+
+        <div class="category-buttons">
+            <button id="schanzBtn" class="active" onclick="showCategory('schanz')">Schanz 24.08.24</button>
+            <button id="ponyhofBtn" onclick="showCategory('ponyhof')">Ponyhof 30.08.24</button>
+        </div>
+
+        <div class="gallery-container" id="galleryContainer">
+            <!-- Schanz Images -->
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz1.jpg')">
+                <img src="images/schanz/schanz1.jpg" alt="Schanz Image 1">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz2.jpg')">
+                <img src="images/schanz/schanz2.jpg" alt="Schanz Image 2">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz3.jpg')">
+                <img src="images/schanz/schanz3.jpg" alt="Schanz Image 3">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz4.jpg')">
+                <img src="images/schanz/schanz4.jpg" alt="Schanz Image 4">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz5.jpg')">
+                <img src="images/schanz/schanz5.jpg" alt="Schanz Image 5">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz6.jpg')">
+                <img src="images/schanz/schanz6.jpg" alt="Schanz Image 6">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz7.jpg')">
+                <img src="images/schanz/schanz7.jpg" alt="Schanz Image 7">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz8.jpg')">
+                <img src="images/schanz/schanz8.jpg" alt="Schanz Image 8">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz9.jpg')">
+                <img src="images/schanz/schanz9.jpg" alt="Schanz Image 9">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz10.jpg')">
+                <img src="images/schanz/schanz10.jpg" alt="Schanz Image 10">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz11.jpg')">
+                <img src="images/schanz/schanz11.jpg" alt="Schanz Image 11">
+            </div>
+            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz12.jpg')">
+                <img src="images/schanz/schanz12.jpg" alt="Schanz Image 12">
+            </div>
+
+            <!-- Ponyhof Images -->
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof1.jpg')">
+                <img src="images/ponyhof/ponyhof1.jpg" alt="Ponyhof Image 1">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof2.jpg')">
+                <img src="images/ponyhof/ponyhof2.jpg" alt="Ponyhof Image 2">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof3.jpg')">
+                <img src="images/ponyhof/ponyhof3.jpg" alt="Ponyhof Image 3">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof4.jpg')">
+                <img src="images/ponyhof/ponyhof4.jpg" alt="Ponyhof Image 4">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof5.jpg')">
+                <img src="images/ponyhof/ponyhof5.jpg" alt="Ponyhof Image 5">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof6.jpg')">
+                <img src="images/ponyhof/ponyhof6.jpg" alt="Ponyhof Image 6">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof7.jpg')">
+                <img src="images/ponyhof/ponyhof7.jpg" alt="Ponyhof Image 7">
+            </div>
+            <div class="gallery-item ponyhof" style="display: none;" onclick="showImage('images/ponyhof/ponyhof8.jpg')">
+                <img src="images/ponyhof/ponyhof8.jpg" alt="Ponyhof Image 8">
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <img id="overlayImage" src="" alt="Expanded Image">
+        </div>
+
+        <button class="back-to-top" id="backToTopBtn">Back to Top</button>
+        <button class="back-to-main" id="backToMainBtn">Back to Main Page</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Asura Falls. All rights reserved. | <a href="impressum.html">Impressum</a></p>
+    </footer>
+
+    <script>
+        window.onscroll = function () {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+            const backToMainBtn = document.getElementById("backToMainBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+                backToMainBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+                backToMainBtn.style.display = "none";
+            }
+        };
+
+        document.getElementById("backToTopBtn").addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+
+        document.getElementById("backToMainBtn").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        function showImage(src) {
+            const overlay = document.getElementById("overlay");
+            const overlayImage = document.getElementById("overlayImage");
+            overlayImage.src = src;
+            overlay.style.display = "flex";
+        }
+
+        document.getElementById("overlay").addEventListener("click", function () {
+            this.style.display = "none";
+        });
+
+        function showCategory(category) {
+            const allCategories = ['schanz', 'ponyhof'];
+            allCategories.forEach(cat => {
+                const images = document.querySelectorAll(`.${cat}`);
+                images.forEach(img => img.style.display = category === cat ? 'block' : 'none');
+            });
+
+            document.getElementById('schanzBtn').classList.remove('active');
+            document.getElementById('ponyhofBtn').classList.remove('active');
+
+            if (category === 'schanz') {
+                document.getElementById('schanzBtn').classList.add('active');
+            } else {
+                document.getElementById('ponyhofBtn').classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
