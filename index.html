@@ -319,58 +319,65 @@
         <section id="shows">
             <h2>Upcoming Shows</h2>
             <hr class="styled-hr">
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Date</th>
-                        <th>Location</th>
-                        <th>Other Bands</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="images/Elver_Gig_050425.png" alt="Show Image" width="200"></td>
-                        <td>05.04.2025</td>
-                        <td>ELFER Club, Frankfurt</td>
-                        <td>Failed Star, Past Reflection<td/>
-                        <td><a href="https://t.rausgegangen.de/tickets/asura-falls" class="btn btn-primary">Tickets</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="media">
-            <h2>Media</h2>
-            <hr class="styled-hr">
-            <div class="video-container">
-                <iframe width="100%" height="720" src="https://www.youtube.com/embed/cnagJXyYSo8" title="Asura Falls - Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="show-list">
+                <div class="show-card">
+                <img src="images/Elver_Gig_050425.png" alt="Show Image">
+            <div class="show-details">
+                <h4>05.04.2025 - Elversberg</h4>
+                <p><strong>Location:</strong> Rockclub Elversberg</p>
+                <p><strong>Other Bands:</strong> Band X, Band Y</p>
+                <a href="https://ticket-link.com" class="btn btn-primary" target="_blank">Tickets</a>
             </div>
-
-            <!-- Highlighted Gallery Button -->
-            <div class="gallery-link" style="text-align: center; margin-top: 30px;">
-                <a href="gallery.html" class="gallery-button" style="text-decoration: none;">
-                    <button style="
-                        background-color: #0335D1;
-                        color: white;
-                        border: none;
-                        border-radius: 5px;
-                        padding: 15px 30px;
-                        font-size: 18px;
-                        cursor: pointer;
-                    ">Gallery</button>
-                </a>
+        </div>
+        <div class="show-card">
+            <img src="images/Another_Gig.png" alt="Show Image">
+            <div class="show-details">
+                <h4>12.06.2025 - Frankfurt</h4>
+                <p><strong>Location:</strong> Nachtleben</p>
+                <p><strong>Other Bands:</strong> Band A, Band B</p>
+                <a href="https://ticket-link.com" class="btn btn-primary" target="_blank">Tickets</a>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="social-icons">
-                <h3>Follow us on social media:</h3>
-                <a href="https://www.facebook.com/asurafalls/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/asura__falls_band/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@AsuraFallsBand" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@asurafallsband" target="_blank"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </section>
+<style>
+    .show-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .show-card {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .show-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .show-details {
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #1db954;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #17a34a;
+    }
+</style>
 
         <section id="contact">
             <h2>Contact</h2>
