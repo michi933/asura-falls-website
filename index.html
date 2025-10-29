@@ -133,7 +133,9 @@
         }
 
         .social-icons a {
-          display: inline-block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: white;
           background: #222;
           border-radius: 50%;
@@ -143,14 +145,11 @@
           transition: transform 0.2s, background 0.2s;
           z-index: 10;
           position: relative;
-          line-height: 48px; 
-          text-align: center; 
         }
 
           .social-icons a:hover {
               background: #fff;
               transform: scale(1.12);
-              display: flex;
           }
 
           .social-icons a:hover .fa-instagram { color: #E4405F; }
@@ -558,6 +557,7 @@
 </body>
 
 </html>
+
 
 
 
