@@ -118,26 +118,30 @@
 
         /* Social media icons styling */
         .social-icons {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            background: #222;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            line-height: 48px;
-            font-size: 28px;
-            transition: transform 0.2s, background 0.2s;
-        }
-        .social-icons a:hover {
-            color: #1db954;
-            background: #444;
-            transform: scale(1.12);
-        }
+                text-align: center;
+                margin: 30px 0;
+                z-index: 10; /* Hoch genug setzen */
+                position: relative; /* Für z-index */
+                }
+                .social-icons a {
+                display: inline-block;
+                margin: 0 10px;
+                color: white;
+                background: #222;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                font-size: 28px;
+                transition: transform 0.2s, background 0.2s;
+                z-index: 10;
+                position: relative;
+                }
+                .social-icons a:hover {
+                    color: #1db954;
+                    background: #444;
+                    transform: scale(1.12);
+                }
         /* Back to top button styling */
         .back-to-top {
             position: fixed;
@@ -269,42 +273,49 @@
                 <img src="images/band/jenny.jpg" class="d-block w-100" alt="Jenny">
                 <div class="carousel-caption text-center">
                     <h2>Jenny - Vocals</h2>
-                    <h5>Even as a young child, Jenny liked to be on stage, no matter where she was, if she liked a song, she sang along and danced to it. In her youth, she was inspired by Linkin Park, Green Day, Bullet for my Valentine. Her current role models include "In This Moment" singer Maria Brink and "Beyond the Black" singer Jennifer Haben. With her engaging stage presence and convincing voice ranging from gentle and empathetic to heavy and aggressive. She joined this year in February as the last member and made us complete with our sound.</h5>
+                    <h5>Schon als kleines Kind stand Jenny gerne auf der Bühne – ganz egal wo sie war. Wenn ihr ein Lied gefiel, sang sie mit und tanzte dazu. In ihrer Jugend ließen sich ihre musikalischen Vorbilder in Bands wie Linkin Park, Green Day und Bullet for My Valentine finden. Heute zählen unter anderem Maria Brink von In This Moment und Jennifer Haben von Beyond the Black zu ihren Inspirationen.
+                        Mit ihrer mitreißenden Bühnenpräsenz und einer überzeugenden Stimme, die von sanft und einfühlsam bis kraftvoll und aggressiv reicht, bringt sie eine enorme Dynamik in die Band.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/nemo.jpg" class="d-block w-100" alt="Nemo">
                 <div class="carousel-caption text-center">
                     <h2>Nemo - Vocals</h2>
-                    <h5>Nemo discovered his love for music at an early age and now, many years later, he has been the frontman of Asura Falls. With many years of experience as a shouter, rapper and lyricist, he provides the necessary hardness with his unmistakable style and voice and moves forward without compromise.</h5>
+                    <h5>Nemo entdeckte schon früh seine Liebe zur Musik und ist heute – viele Jahre später – der Frontmann von Asura Falls. Mit seiner langjährigen Erfahrung als Shouter, Rapper und Texter verleiht er der Band die nötige Härte. Durch seinen unverwechselbaren Stil und seine markante Stimme treibt er den Sound kompromisslos nach vorn.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/jonas.jpg" class="d-block w-100" alt="Jonas">
                 <div class="carousel-caption text-center">
                     <h2>Jonas - 8-String</h2>
-                    <h5>Inspired by his music teacher, Jonas started his musical career relatively late, but all the more determined. His journey and with it the search for his own sound began with influences such as In Flames, Caliban, and Insomnium. Armed with 8 strings and his songwriting, Jonas lays a foundation of heaviness and melancholy on which the band builds its songs. Even if he is rarely in the foreground, he is irreplaceable as a rhythm guitarist and “the band's own tech guy” and contributes significantly to the band's sound.</h5>
+                    <h5>Inspiriert von seinem Musiklehrer begann Jonas seine musikalische Laufbahn zwar relativ spät, dafür aber umso entschlossener. Seine Reise – und damit die Suche nach seinem eigenen Sound – begann mit Einflüssen von Bands wie In Flames, Caliban und Insomnium.
+                        Bewaffnet mit acht Saiten und seinem Songwriting legt Jonas ein Fundament aus Schwere und Melancholie, auf dem die Band ihre Songs aufbaut.
+                        Auch wenn er selten im Vordergrund steht, ist er als Rhythmusgitarrist und „hauseigener Technik-Guy“ unersetzlich und trägt maßgeblich zum Sound der Band bei.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/conz.jpg" class="d-block w-100" alt="Conz">
                 <div class="carousel-caption text-center">
                     <h2>Cons - 7-String</h2>
-                    <h5>Since the very beginning, Cons has been a founding member, lead guitarist and therefore the “veteran” of our band.He has been playing guitar since he was 8 years old and his influences from classic blues and metal make him a significant contributor to the typical “Asura sound”. Inspired by modern core bands, he transforms ideas into melodic riffs and accompanies them with synth sounds.</h5>
+                    <h5>Seit der ersten Stunde ist Cons Gründungsmitglied, Leadgitarrist und damit der „Veteran“ unserer Band.
+                        Er spielt Gitarre, seit er acht Jahre alt ist, und seine Einflüsse aus klassischem Blues und Metal prägen maßgeblich den typischen Asura-Sound.
+                        Inspiriert von modernen Core-Bands verwandelt er Ideen in melodische Riffs und ergänzt sie mit atmosphärischen Synth-Sounds.</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="images/band/suri.jpg" class="d-block w-100" alt="Suri">
                 <div class="carousel-caption text-center">
                     <h2>Sueri - Bass</h2>
-                    <h5>Sueri discovered his passion for deep tones at the age of 14 and his roots in the early 2000s skatepunk. After a long break, he has been an integral member of Asura Falls since 2016 and, as the esteemed bassist of our band, provides the essential foundation that allows our music to be felt.</h5>
+                    <h5>Sueri entdeckte seine Leidenschaft für tiefe Töne im Alter von 14 Jahren – seine Wurzeln liegen im Skatepunk der frühen 2000er.
+                        Nach einer längeren Pause ist er seit 2016 ein fester Bestandteil von Asura Falls und sorgt als geschätzter Bassist der Band für das unverzichtbare Fundament, das unsere Musik spürbar macht.</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/band/erasmus.jpg" class="d-block w-100" alt="Dennis">
+                <img src="images/band/erasmus.jpg" class="d-block w-100" alt="Erasmus">
                 <div class="carousel-caption text-center">
                     <h2>Erausmus - Drums</h2>
-                    <h5>While playing multiple instruments, his true passion lies in the drums. Drawing inspiration from a wide range of styles—from game soundtracks to progressive metal—his playing blends heavy beats with playful fills, creating a distinctive energy and drive.</h5>
+                    <h5>Auch wenn er mehrere Instrumente beherrscht, liegt seine wahre Leidenschaft im Schlagzeug.
+                        Beeinflusst von einer Vielzahl an Stilrichtungen – von Videospiel-Soundtracks bis hin zu Progressive Metal – verbindet sein Spiel wuchtige Beats mit verspielten Fills und erschafft so eine unverwechselbare Energie und Dynamik.</h5>
                 </div>
             </div>
         </div>
@@ -329,7 +340,7 @@
                 <h4>14.11.2025</h4>
                 <p><strong>Location:</strong>Elfer Club, Kleine Rittergasse 14-20, 60594 Frankfurt am Main</p>
                 <p><strong>Other Bands:</strong>Give Me A Remedy, Caught in a Mirror Headliner: KrashKarma</p>
-                <a href="https://rockimschlosspark.jimdofree.com" class="btn btn-primary" target="_blank">Info</a>
+                <a href="https://elferclub.de" class="btn btn-primary" target="_blank">Info</a>
             </div>
         </div>
         </section>
@@ -530,6 +541,7 @@
 </body>
 
 </html>
+
 
 
 
