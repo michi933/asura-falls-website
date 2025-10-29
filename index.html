@@ -337,7 +337,12 @@
 </section>
         <section id="media">
             <h2>Spotify</h2>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1M0iXpavLgKsRaZfiB18ne?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div id="spotify-placeholder" style="position:relative; width:100%; height:352px; background:rgba(0,0,0,0.6); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+                <p style="color:white; text-align:center; max-width:450px;">To protect your privacy, the Spotify player is only loaded after you accept cookies and external services.</p>
+                <button id="loadSpotify" style="margin:15px 0 0 0; padding:10px 20px; border:none; border-radius:6px; background:#1db954; color:white; font-size:1.1em; cursor:pointer;">
+                Accept & Load Spotify Player
+                </button>
+            </div>
         </section>
 <style>
     .show-list {
@@ -499,6 +504,14 @@
             overlay.style.display = "none";
         };
     </script>
+    <script>
+        document.getElementById('loadSpotify').onclick = function() {
+        var placeholder = document.getElementById('spotify-placeholder');
+        placeholder.innerHTML = '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1M0iXpavLgKsRaZfiB18ne?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>';
+        };
+    </script>
+
 </body>
 
 </html>
+
