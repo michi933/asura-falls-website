@@ -1,0 +1,443 @@
+:root {
+    --primary-color: #1db954;
+    --primary-glow: rgba(29, 185, 84, 0.3);
+    --accent-color: #0335D1;
+    --bg-dark: #050505;
+    --card-bg: rgba(15, 15, 15, 0.95);
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* 1. Global Reset & Performance */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Fixed background */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../background.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: translateZ(0); 
+}
+
+/* 2. Typography */
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+/* 3. Navigation Styling (Unified Across All Pages) */
+.navbar {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+    z-index: 1030;
+}
+
+.navbar-brand img {
+    height: 45px;
+    transition: transform 0.3s;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: #fff !important;
+    margin: 0 10px;
+    font-size: 0.95rem;
+    transition: color 0.3s, background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Page Links (Distinguished Styling) */
+.nav-link-alt {
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding: 0.4rem 15px !important;
+    margin-left: 10px !important;
+}
+
+.nav-link-alt:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(29, 185, 84, 0.1);
+}
+
+/* Nav Divider */
+.nav-divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255,255,255,0.15);
+    margin: 0 15px;
+}
+
+/* 4. Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.hero-img-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+    margin: 0 auto 40px;
+    max-width: 100%;
+    width: fit-content;
+    display: block;
+}
+
+.hero-img-wrap img {
+    max-width: 100%;
+    max-height: 60vh;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 3.5rem; }
+    .hero-subtitle { letter-spacing: 4px; }
+    .hero-img-wrap img { max-height: 40vh; }
+    .nav-divider { display: none; }
+    .nav-link-alt { margin: 10px 0 !important; border: none; padding-left: 0 !important; }
+}
+
+/* 5. Sections & Animations */
+section {
+    padding: 80px 0;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-box {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* 6. Professional Carousel */
+.carousel-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.carousel-item {
+    background: #000;
+}
+
+.carousel-img-wrap {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.member-bio {
+    padding: 40px;
+    background: linear-gradient(to bottom, #0a0a0a, #000);
+    color: #fff;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    /* Prevent jumping: stable min-height for consistent layout */
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.member-bio h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.member-bio h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.member-bio p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+    color: #eee;
+    font-weight: 300;
+}
+
+/* Responsive Carousel Heights */
+@media (max-width: 992px) {
+    .member-bio { min-height: 380px; }
+}
+
+@media (max-width: 768px) {
+    .carousel-img-wrap { height: 500px; }
+    .member-bio { 
+        min-height: 520px; 
+        padding: 30px 20px; 
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 400px !important; /* Center arrows on image area only */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-img-wrap { height: 400px; }
+    .member-bio { min-height: 650px; }
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 320px !important;
+    }
+}
+
+/* Enhanced Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 12%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    height: 500px; /* Default desktop height of image wrap */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* 7. Show Cards */
+.show-card {
+    background: rgba(25, 25, 25, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+}
+
+.show-image {
+    width: 300px;
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .show-card { flex-direction: column; }
+    .show-image { width: 100%; height: 250px; }
+}
+
+.show-info { padding: 30px; flex-grow: 1; }
+
+.btn-tickets {
+    background: var(--primary-color);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-tickets:hover {
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* 8. Gallery Grid with Professional Transition */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #111;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Slightly bigger on hover as requested */
+}
+
+/* 9. Lightbox */
+#imageOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+#imageOverlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* 10. Footer */
+footer {
+    padding: 60px 0 30px;
+    background: #000;
+    text-align: center;
+}
+
+.social-icons a {
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    border: none;
+}
+
+.back-to-top.visible { opacity: 1; visibility: visible; }

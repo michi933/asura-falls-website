@@ -5,140 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="icon" href="images/symbol.jpeg">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <title>Impressum - Asura Falls</title>
-    <style>
-        body {
-            background-image: url('background.jpeg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: black;
-            position: relative;
-            color: white; /* Set default text color */
-        }
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 10px;
-            border-radius: 10px;
-            z-index: 3;
-            position: relative;
-        }
-
-        .navbar .nav-link {
-            color: white;
-            transition: color 0.2s;
-        }
-
-        .navbar .nav-link:hover {
-            color: #1db954;
-        }
-
-        section {
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 2;
-            margin: 20px;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            z-index: 3;
-            position: relative;
-        }
-
-        footer a {
-            color: white;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: #1db954;
-        }
-
-        .back-to-main {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0335D1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            z-index: 4;
-        }
-
-        .back-to-main:hover {
-            background-color: #197EFB;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>Impressum | Asura Falls</title>
 </head>
 
 <body>
+    <div class="bg-overlay"></div>
 
-    <nav id="navbar" class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Logo" style="height: 50px;">
-        </a>
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#band">Band</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#media">Media</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.html">Gallery</a>
-                </li>
-            </ul>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Asura Falls Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#band">The Band</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#shows">Shows</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#media">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <section>
-        <h2>Impressum</h2>
-        <p>Inhaltlich private/ideelle Projektseite ohne Handelsregistereintrag.</p>
-        <p><strong>Name:</strong> Michael Grohs</p>
-        <p><strong>Adresse:</strong> Schlesierstraße 3, 61381 Friedrichsdorf</p>
-        <p>&copy; 2024 Asura Falls. All rights reserved.</p>
-    </section>
+    <main class="container" style="padding-top: 150px; padding-bottom: 100px;">
+        <section class="visible">
+            <div class="content-box mx-auto" style="max-width: 600px;">
+                <h2>Impressum</h2>
+                <div class="mt-4">
+                    <p class="text-muted">Inhaltlich private/ideelle Projektseite ohne Handelsregistereintrag.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1);">
+                    <p><strong>Name:</strong> Michael Grohs</p>
+                    <p><strong>Adresse:</strong> Schlesierstraße 3, 61381 Friedrichsdorf</p>
+                    <p><strong>Email:</strong> asurafalls.ffm@gmail.com</p>
+                </div>
+                
+                <div class="mt-5 text-center">
+                    <a href="index.html" class="btn btn-tickets"><i class="fas fa-arrow-left mr-2"></i> Back to Main Page</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <button class="back-to-main" onclick="window.location.href='index.html'">Back to Main Page</button>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
