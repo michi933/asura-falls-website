@@ -5,588 +5,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="icon" href="images/symbol.jpeg">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <title>Asura Falls</title>
-    <meta name="description" content="Welcome to the official website of Asura Falls. Explore our music, events, and more.">
-    <meta name="keywords" content="Asura Falls, band, music, concerts, events, metal">
-    <meta name="author" content="Michael Grohs">
-    <style>
-        body {
-            background-image: url('background.jpeg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: black; /* Falls das Bild nicht geladen werden kann */
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* 50% schwarze Transparenz */
-            z-index: 1; /* Auf die richtige Schicht setzen */
-        }
-
-        section {
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6); /* Schwarzer Hintergrund mit 60% Transparenz */
-            padding: 20px;
-            border-radius: 10px; /* Abgerundete Ecken */
-            position: relative; /* Um sicherzustellen, dass der Text über dem Overlay liegt */
-            z-index: 2; /* Sicherstellen, dass der Inhalt über dem Overlay angezeigt wird */
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-            padding: 10px; /* Etwas mehr Polsterung für die Navbar */
-            border-radius: 10px; /* Abgerundete Ecken für die Navbar */
-            z-index: 3; /* Höherer Z-Index für die Navbar */
-            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
-        }
-
-        .navbar .nav-link {
-            color: white; /* Schriftfarbe auf Weiß */
-            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
-        }
-
-        .navbar .nav-link:hover {
-            color: #1db954; /* Grüner Farbwechsel bei Hover */
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
-            backdrop-filter: blur(5px); /* Unschärfe für den Hintergrund */
-            padding: 10px; /* Etwas mehr Polsterung für das Impressum */
-            border-radius: 10px; /* Abgerundete Ecken für das Impressum */
-            text-align: center; /* Text zentrieren */
-            color: white; /* Schriftfarbe auf Weiß */
-            z-index: 3; /* Höherer Z-Index für das Impressum */
-            position: relative; /* Sicherstellen, dass es über dem Overlay angezeigt wird */
-        }
-
-        footer a {
-            color: white; /* Sicherstellen, dass der Link Weiß ist */
-            transition: color 0.2s; /* Übergangseffekt für den Farbwechsel */
-        }
-
-        footer a:hover {
-            color: #1db954; /* Grüner Farbwechsel bei Hover */
-        }
-
-        .band-image,
-        .logo-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .band-text {
-            font-size: 1.1rem; /* Genauso wie .carousel-caption h5 */
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'sans-serif'; /* Bootstrap Standard */
-            color: white;
-            font-weight: 400;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        /* Logo Styling */
-        .navbar-brand img {
-            height: 40px; /* Logo-Höhe anpassen */
-            width: auto; /* Breite automatisch anpassen */
-        }
-
-        /* Gallery styling */
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start; /* Align images to the left */
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            flex-basis: calc(20% - 2px); /* Adjust for 5 images in a row */
-            margin: 1px; /* Small margin to prevent spacing issues */
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Social media icons styling */
-        .social-icons {
-          display: flex;
-          justify-content: center; /* center horizontally, optional */
-          gap: 20px;               /* space between icons, optional */
-          margin: 20px 0;          /* vertical spacing, optional */
-        }
-
-        .social-icons a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          background: #222;
-          border-radius: 50%;
-          width: 48px;
-          height: 48px;
-          font-size: 28px;
-          transition: transform 0.2s, background 0.2s;
-          z-index: 10;
-          position: relative;
-        }
-
-          .social-icons a:hover {
-              background: #fff;
-              transform: scale(1.12);
-          }
-
-          .social-icons a:hover .fa-instagram { color: #E4405F; }
-          .social-icons a:hover .fa-facebook { color: #1877F3; }
-          .social-icons a:hover .fa-youtube { color: #FF0000; }
-          .social-icons a:hover .fa-spotify { color: #1DB954; }
-          .social-icons a:hover .fa-tiktok { color: #000000; }
-        /* Back to top button styling */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0335D1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-            z-index: 3; /* Höherer Z-Index für den Button */
-        }
-        /* Ensure the text in the slideshow is visible on mobile */
-.carousel-caption {
-    position: absolute; /* Positionierung für korrekte Platzierung */
-    bottom: 30px; /* Text an den unteren Rand des Bildes */
-    left: 0; /* Linke Ausrichtung */
-    right: 0; /* Rechte Ausrichtung */
-    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
-    color: white; /* Textfarbe */
-    padding: 10px; /* Innenabstand */
-    border-radius: 5px; /* Abgerundete Ecken */
-}
-/* Mobile Anpassung */
-@media (max-width: 768px) {
-    .carousel-caption {
-        position: relative; /* Relative Positionierung für Mobilgeräte */
-        bottom: 30px; 
-    }
-}
-        /* Abstand für die Controls */
-.carousel-control-prev,
-.carousel-control-next {
-    bottom: 20px; /* Abstand vom unteren Rand des Containers */
-}
-        .carousel-indicators {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    list-style: none;
-    margin-top: 20px; /* Abstand zum oberen Element */
-}
-/* Reduce slideshow image size on larger screens */
-@media (min-width: 992px) {
-    .carousel-inner img {
-        max-height: 992px; /* Adjust the height as per your preference */
-        object-fit: contain; /* Ensure the image scales to fit without cropping */
-        width: 100%; /* Make sure the width remains 100% */
-    }
-}
-
-/* Full size on mobile */
-@media (max-width: 768px) {
-    .carousel-inner img {
-        width: 100%; /* Ensure full width on mobile */
-        height: auto;
-    }
-}
-
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>Asura Falls | Modern Metalcore from Frankfurt</title>
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="200">
+<body data-spy="scroll" data-target="#navbar" data-offset="100">
+    <div class="bg-overlay"></div>
 
-    <div class="container">
-        <nav id="navbar" class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Logo"> <!-- Logo hinzugefügt -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Asura Falls Logo">
             </a>
-            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto" role="tablist"> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="history.html">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#shows">Shows</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#media">Spotify</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#press">Press</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a> <!-- Galerie verlinkt -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact and EPK + Stage/Tech-Rider</a>
-                    </li>
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- Same-page scroll links -->
+                    <li class="nav-item"><a class="nav-link" href="#band">The Band</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shows">Shows</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#media">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rider">EPK & Rider</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    
+                    <!-- Visual separator for modern structure -->
+                    <li class="nav-divider d-none d-lg-block"></li>
+                    
+                    <!-- Page transition links -->
+                    <li class="nav-item"><a class="nav-link nav-link-alt" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-alt" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-<section id="band">
-    <h2>The Band</h2>
-    <hr class="styled-hr">
-    <img src="images/band.jpg" alt="Band Image" class="band-image">
-    <p class="carousel-caption text-center">
-      <h5>Asura Falls stand for high-energy modern metalcore with a clear message, massive riffs, and two unmistakable voices. The six-piece band combines melodic depth, emotional intensity, and uncommon diversity into their music.
-
-With influences from Bullet For My Valentine, Killswitch Engage, and In Flames, Asura Falls create a powerful blend of catchy melodies, aggressive breakdowns, and atmospheric moments. Clean vocals and raw screams meet heavy guitar riffs, surprising you at every turn.
-
-Since the relaunch with Jenny and Nemo on vocals, the band has gained a fresh dynamic. Together with Jonas (8-string guitar), Cons (7-string lead guitar), Sueri (bass), and Erausmus (drums), they form a six-piece powerhouse ready to conquer stages.
-
-Whether on big stages or in intimate club shows, Asura Falls stand for authenticity, passion, and electrifying live energy. The band transforms small clubs and large stages alike into a sea of movement and emotion.
-
-With new songs and upcoming shows, Asura Falls are ready for the next step — uncompromising, honest, and driven by a clear goal: to bring their music to the world.</h5>
-    </p>
-
-    <!-- Slideshow Container -->
-    <div id="bandSlideshow" class="carousel slide" data-ride="carousel">
-        <!-- Slideshow Indicators -->
-        <ul class="carousel-indicators" style="margin-top: 20px;">
-            <li data-target="#bandSlideshow" data-slide-to="0" class="active"></li>
-            <li data-target="#bandSlideshow" data-slide-to="1"></li>
-            <li data-target="#bandSlideshow" data-slide-to="2"></li>
-            <li data-target="#bandSlideshow" data-slide-to="3"></li>
-            <li data-target="#bandSlideshow" data-slide-to="4"></li>
-            <li data-target="#bandSlideshow" data-slide-to="5"></li>
-        </ul>
-
-        <!-- Slideshow Images -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/band/jenny.jpg" class="d-block w-100" alt="Jenny">
-                <div class="carousel-caption text-center">
-                    <h2>Jenny - Vocals</h2>
-                    <h5>Even as a small child, Jenny loved being on stage — no matter where she was. If she liked a song, she would sing along and dance to it. During her teenage years, her musical talent developed steadily, and she has been singing in bands ever since.
-                        With her captivating stage presence and a compelling voice that ranges from soft and sensitive to powerful and aggressive, she brings tremendous dynamic energy to the band.</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/band/nemo.jpg" class="d-block w-100" alt="Nemo">
-                <div class="carousel-caption text-center">
-                    <h2>Nemo - Vocals</h2>
-                    <h5>Nemo discovered his passion for music at an early age and, many years later, is now the frontman of Asura Falls. With his long-standing experience as a shouter, rapper, and lyricist, he brings intense conviction and raw emotion to every performance, captivating audiences with his powerful stage presence.</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/band/jonas.jpg" class="d-block w-100" alt="Jonas">
-                <div class="carousel-caption text-center">
-                    <h2>Jonas - 8-String</h2>
-                    <h5>Inspired by his music teacher, Jonas began his musical journey relatively late — but all the more determined. His path — and with it the search for his own sound — was shaped by countless bands and artists, from classic rock to modern metal.
-                        Armed with eight strings and his songwriting skills, Jonas lays a foundation of heaviness and melancholy on which the band builds its songs.
-                        Even though he rarely stands in the spotlight, he is indispensable as the rhythm guitarist and the band's in-house "tech guy," making a crucial contribution to their overall sound.</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/band/conz.jpg" class="d-block w-100" alt="Conz">
-                <div class="carousel-caption text-center">
-                    <h2>Cons - 7-String</h2>
-                    <h5>Since day one, Cons has been a founding member, lead guitarist, and therefore the "veteran" of our band.
-                        He has been playing guitar since the age of eight, and his influences from classic blues and metal have played a major role in shaping the distinctive Asura sound.
-                        Inspired by modern core bands, he transforms ideas into melodic riffs and enhances them with atmospheric synth elements.</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/band/suri.jpg" class="d-block w-100" alt="Suri">
-                <div class="carousel-caption text-center">
-                    <h2>Sueri - Bass</h2>
-                    <h5>Sueri discovered his passion for low tones at the age of 14 — his roots lie in the skate punk of the early 2000s.
-                        After a longer break, he has been a permanent member of Asura Falls since 2016 and, as the band's valued bassist, provides the essential foundation that makes our music truly complete.</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/band/erasmus.jpg" class="d-block w-100" alt="Erasmus">
-                <div class="carousel-caption text-center">
-                    <h2>Erasmus - Drums</h2>
-                    <h5>Although he masters several instruments, his true passion lies behind the drums.
-                        Influenced by a wide range of styles — from video game soundtracks to progressive metal — his playing combines powerful beats with playful fills, creating a distinctive energy that drives Asura Falls forward.</h5>
+    <!-- Hero Section: Focused on the Band Image -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1 class="hero-title">Asura Falls</h1>
+                <p class="hero-subtitle">MODERN METALCORE</p>
+                <div class="hero-img-wrap">
+                    <img src="images/band.jpg" alt="Asura Falls Band">
                 </div>
             </div>
         </div>
+    </header>
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#bandSlideshow" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#bandSlideshow" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
-</section>
+    <main class="container">
+        <!-- Band Info Section -->
+        <section id="band">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center animate-on-scroll">
+                    <h2>The Band</h2>
+                    <p class="band-intro" style="border:none; padding-left:0;">
+                        Asura Falls stand for high-energy modern metalcore with a clear message, massive riffs, and two unmistakable voices. The six-piece band combines melodic depth, emotional intensity, and uncommon diversity into their music.
+                    </p>
+                    <p class="band-intro" style="border:none; padding-left:0;">
+                        With influences from Bullet For My Valentine, Killswitch Engage, and In Flames, Asura Falls create a powerful blend of catchy melodies, aggressive breakdowns, and atmospheric moments. Clean vocals and raw screams meet heavy guitar riffs, surprising you at every turn.
+                    </p>
+                    <p class="band-intro" style="border:none; padding-left:0;">
+                        Since the relaunch with Jenny and Nemo on vocals, the band has gained a fresh dynamic. Together with Jonas (8-string guitar), Cons (7-string lead guitar), Sueri (bass), and Erausmus (drums), they form a six-piece powerhouse ready to conquer stages.
+                    </p>
+                    <p class="band-intro" style="border:none; padding-left:0;">
+                        Whether on big stages or in intimate club shows, Asura Falls stand for authenticity, passion, and electrifying live energy. The band transforms small clubs and large stages alike into a sea of movement and emotion.
+                    </p>
+                    <p class="band-intro" style="border:none; padding-left:0;">
+                        With new songs and upcoming shows, Asura Falls are ready for the next step — uncompromising, honest, and driven by a clear goal: to bring their music to the world.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Member Carousel: Fade effect added and structure optimized -->
+            <div class="carousel-container animate-on-scroll mt-5">
+                <div id="bandSlideshow" class="carousel slide data-ride" data-ride="carousel" data-interval="8000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/jenny.jpg" alt="Jenny">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Jenny - Vocals</h3>
+                                <p>Even as a small child, Jenny loved being on stage — no matter where she was. If she liked a song, she would sing along and dance to it. During her teenage years, her musical talent developed steadily, and she has been singing in bands ever since. With her captivating stage presence and a compelling voice that ranges from soft and sensitive to powerful and aggressive, she brings tremendous dynamic energy to the band.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/nemo.jpg" alt="Nemo">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Nemo - Vocals</h3>
+                                <p>Nemo discovered his passion for music at an early age and, many years later, is now the frontman of Asura Falls. With his long-standing experience as a shouter, rapper, and lyricist, he brings intense conviction and raw emotion to every performance, captivating audiences with his powerful stage presence.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/jonas.jpg" alt="Jonas">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Jonas - 8-String</h3>
+                                <p>Inspired by his music teacher, Jonas began his musical journey relatively late — but all the more determined. His path — and with it the search for his own sound — was shaped by countless bands and artists, from classic rock to modern metal. Armed with eight strings and his songwriting skills, Jonas lays a foundation of heaviness and melancholy on which the band builds its songs. Even though he rarely stands in the spotlight, he is indispensable as the rhythm guitarist and the band's in-house "tech guy," making a crucial contribution to their overall sound.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/conz.jpg" alt="Conz">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Cons - 7-String</h3>
+                                <p>Since day one, Cons has been a founding member, lead guitarist, and therefore the "veteran" of our band. He has been playing guitar since the age of eight, and his influences from classic blues and metal have played a major role in shaping the distinctive Asura sound. Inspired by modern core bands, he transforms ideas into melodic riffs and enhances them with atmospheric synth elements.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/suri.jpg" alt="Suri">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Sueri - Bass</h3>
+                                <p>Sueri discovered his passion for low tones at the age of 14 — his roots lie in the skate punk of the early 2000s. After a longer break, he has been a permanent member of Asura Falls since 2016 and, as the band's valued bassist, provides the essential foundation that makes our music truly complete.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="images/band/erasmus.jpg" alt="Erasmus">
+                            </div>
+                            <div class="member-bio">
+                                <h3>Erasmus - Drums</h3>
+                                <p>Although he masters several instruments, his true passion lies behind the drums. Influenced by a wide range of styles — from video game soundtracks to progressive metal — his playing combines powerful beats with playful fills, creating a distinctive energy that drives Asura Falls forward.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="javascript:void(0)" data-target="#bandSlideshow" data-slide="prev" role="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="javascript:void(0)" data-target="#bandSlideshow" data-slide="next" role="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shows Section -->
         <section id="shows">
-            <h2>Upcoming Shows</h2>
-            <hr class="styled-hr">
-            <div class="show-list">
-
-            <div class="show-card">
-                <img src="images/upcoming2026v1.1.png" alt="Show Image">
+            <h2 class="animate-on-scroll">Upcoming Shows</h2>
+            
+            <div class="show-card animate-on-scroll">
+                <img src="images/upcoming2026v1.1.png" alt="Show Image" class="show-image">
+                <div class="show-info">
+                    <h3>Season 2026</h3>
+                    <p>Stay tuned for more updates on our upcoming tour dates.</p>
+                </div>
             </div>
-            <!--    
-              <div class="show-card">
-                <img src="images/posterfrankfurt_elver230526.png" alt="Show Image">
-                  <div class="show-details">
-                    <h4>23.05.2026</h4>
-                    <p><strong>Location: </strong>ELFER MUSIC CLUB, Kleine Rittergasse 14-20, 60594 Frankfurt am Main</p>
-                    <p><strong>Other Bands: </strong>Out Of Vision, Farewell Spit</p>
-                    <a href="https://eventfrog.de/de/p/konzerte/hard-rock-heavy-metal/out-of-vision-exclusive-headline-shows-2026-frankfurt-7421118623505193632.html" class="btn btn-primary" target="_blank">Get Tickets</a>
-                  </div>
+
+            <div class="show-card animate-on-scroll">
+                <img src="images/flyerschanz141126.jpeg" alt="Show Image" class="show-image">
+                <div class="show-info">
+                    <h3>14.11.2026 - Mühlheim am Main</h3>
+                    <p><strong>Location:</strong> Kulturhalle Schanz</p>
+                    <p><strong>With:</strong> About Monsters, Sapiency, Spillflower</p>
+                    <a href="https://www.reservix.de/p/reservix/event/2559204" class="btn btn-tickets" target="_blank">Get Tickets</a>
                 </div>
-             -->   
-            <div class="show-card">
-                <img src="images/flyerschanz141126.jpeg" alt="Show Image">
-                  <div class="show-details">
-                    <h4>14.11.2026</h4>
-                    <p><strong>Location: </strong>Kulturhalle Schanz, Carl-Zeiss-Straße 6, 63165 Mühlheim am Main</p>
-                    <p><strong>Other Bands: </strong>About Monsters, Sapiency, Spillflower</p>
-                    <a href="https://www.reservix.de/p/reservix/event/2559204" class="btn btn-primary" target="_blank">Get Tickets</a>
-                  </div>
-                </div>
-              
-        </section>
-        
-</section>
-        <section id="youtube">
-            <h2>YouTube</h2>
-            <div id="youtube-placeholder" style="position:relative; width:100%; height:352px; background:rgba(0,0,0,0.6); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column;">
-                <p style="color:white; text-align:center; max-width:450px;">To protect your privacy, the YouTube player is only loaded after you accept cookies and external services.</p>
-                <button id="loadYouTube" style="margin:15px 0 0 0; padding:10px 20px; border:none; border-radius:6px; background:#FF0000; color:white; font-size:1.1em; cursor:pointer;">
-                Accept & Load YouTube Playlist
-                </button>
             </div>
         </section>
 
+        <!-- Media Section -->
         <section id="media">
-            <h2>Spotify</h2>
-            <div id="spotify-placeholder" style="position:relative; width:100%; height:352px; background:rgba(0,0,0,0.6); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column;">
-                <p style="color:white; text-align:center; max-width:450px;">To protect your privacy, the Spotify player is only loaded after you accept cookies and external services.</p>
-                <button id="loadSpotify" style="margin:15px 0 0 0; padding:10px 20px; border:none; border-radius:6px; background:#1db954; color:white; font-size:1.1em; cursor:pointer;">
-                Accept & Load Spotify Player
-                </button>
+            <div class="row">
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <h2>YouTube</h2>
+                    <div id="youtube-placeholder" class="media-placeholder">
+                        <p>Accept external services to load our YouTube playlist.</p>
+                        <button id="loadYouTube" class="btn btn-danger">Load YouTube</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <h2>Spotify</h2>
+                    <div id="spotify-placeholder" class="media-placeholder">
+                        <p>Accept external services to load the Spotify player.</p>
+                        <button id="loadSpotify" class="btn btn-success">Load Spotify</button>
+                    </div>
+                </div>
             </div>
         </section>
-<style>
-    .show-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
 
-    .show-card {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 15px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .show-card img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
-
-    .show-details {
-        color: white;
-    }
-
-    .btn-primary {
-        background-color: #1db954;
-        border: none;
-    }
-
-    .btn-primary:hover {
-        background-color: #17a34a;
-    }
-</style>
-
-<section id="press">
-    <h2>Press</h2>
-    <hr class="styled-hr">
-    <div class="press-links">
-        <div class="press-card">
-            <a href="https://skulls-and-bones-magazine.de/rhein-main-metalcore-united-drei-bands-ein-abriss/" target="_blank">
-                <img src="images/elfer/elfer1.jpg" alt="Article 1 Thumbnail">
-                <div class="press-content">
-                    <h4>Ein Abend, der kracht – Metalcore in Reinform</h4>
-                    <p>Am Samstag, den 5. April 2025, verwandelte sich der Elfer Club in Frankfurt am Main in einen brodelnden Hexenkessel aus Breakdowns, Screams und schweißtreibender Energie. Drei Bands zeigten, warum Metalcore nicht nur eine Musikrichtung, sondern eine Lebenseinstellung ist. Vorbei waren die Zeiten, in denen Metal nur männlich konnotiert wurde.</p>
+        <!-- Press Section -->
+        <section id="press">
+            <h2 class="animate-on-scroll">Press</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <a href="https://skulls-and-bones-magazine.de/rhein-main-metalcore-united-drei-bands-ein-abriss/" target="_blank" class="text-decoration-none">
+                        <div class="content-box press-box h-100">
+                            <img src="images/elfer/elfer1.jpg" alt="Press 1" class="img-fluid rounded mb-3">
+                            <h4>Metalcore in Reinform</h4>
+                            <p class="text-muted">An evening that cracks – three bands showed why Metalcore is a lifestyle.</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-
-        <div class="press-card">
-            <a href="https://skulls-and-bones-magazine.de/breakdown-bash-2024-heisse-klaenge-und-rebellische-riffs-im-schanz-in-muehlheim-am-main/" target="_blank">
-                <img src="images/schanz/schanz1.jpg" alt="Article 2 Thumbnail">
-                <div class="press-content">
-                    <h4>Breakdown Bash 2024</h4>
-                    <p>Abriss Schanz, Frankfurt am Main.</p>
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <a href="https://skulls-and-bones-magazine.de/breakdown-bash-2024-heisse-klaenge-und-rebellische-riffs-im-schanz-in-muehlheim-am-main/" target="_blank" class="text-decoration-none">
+                        <div class="content-box press-box h-100">
+                            <img src="images/schanz/schanz1.jpg" alt="Press 2" class="img-fluid rounded mb-3">
+                            <h4>Breakdown Bash 2024</h4>
+                            <p class="text-muted">Abriss Schanz, Frankfurt am Main.</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<style>
-.press-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.press-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    overflow: hidden;
-    width: calc(50% - 10px);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s;
-}
-
-.press-card:hover {
-    transform: scale(1.02);
-}
-
-.press-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.press-content {
-    padding: 15px;
-    color: white;
-}
-
-.press-content h4 {
-    margin-top: 0;
-    color: #0335D1;
-}
-
-.press-content p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-}
-</style>        
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <hr class="styled-hr">
-            <p>If you want to reach out to us, feel free to send an email to <a href="mailto:asurafalls.ffm@gmail.com">asurafalls.ffm@gmail.com</a>.</p>
-            <p>If you need a Press Kit oder the Stage/Tech-Rider, please klick <a href="https://drive.google.com/drive/folders/1MpWdiyV3u8q_u2vI0zSIb_OC_PH30go0?usp=drive_link">HERE</a>.</p>
+            </div>
         </section>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/asura__falls_band" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/asurafalls" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@AsuraFallsBand" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://open.spotify.com/artist/1M0iXpavLgKsRaZfiB18ne" target="_blank" aria-label="Spotify">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                     <a href="https://www.tiktok.com/@asurafallsband" target="_blank" aria-label="TikToc">
-                        <i class="fab fa-tiktok"></i>
+
+        <!-- EPK & Rider Section -->
+        <section id="rider">
+            <div class="content-box text-center animate-on-scroll">
+                <h2>EPK & Stage Rider</h2>
+                <p class="lead">Download our Electronic Press Kit and Stage/Tech-Rider.</p>
+                <div class="mt-4">
+                    <a href="https://drive.google.com/drive/folders/1MpWdiyV3u8q_u2vI0zSIb_OC_PH30go0?usp=drive_link" target="_blank" class="btn btn-tickets btn-lg">
+                        <i class="fas fa-download mr-2"></i> Download EPK & Rider
                     </a>
                 </div>
-        <footer>
+                <p class="mt-3 text-muted">Includes high-res band photos, logos, and technical requirements.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="content-box text-center animate-on-scroll">
+                <h2>Contact</h2>
+                <p class="lead">Reach out to us for booking and inquiries.</p>
+                <a href="mailto:asurafalls.ffm@gmail.com" class="h4 text-primary email-link" style="transition: color 0.3s;">asurafalls.ffm@gmail.com</a>
+                <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p>We are always open for collaborations and shows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container animate-on-scroll">
+            <div class="social-icons mb-4">
+                <a href="https://www.instagram.com/asura__falls_band" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/asurafalls" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@AsuraFallsBand" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://open.spotify.com/artist/1M0iXpavLgKsRaZfiB18ne" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.tiktok.com/@asurafallsband" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
             <p>&copy; 2024 Asura Falls. All rights reserved.</p>
-            <p><a href="text12.html">Impressum</a></p>
-        </footer>
+            <p><a href="text12.html" class="text-muted">Impressum</a></p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Lightbox Overlay -->
+    <div id="imageOverlay">
+        <img id="overlayImage" src="" alt="Full Size Image">
     </div>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">Back to Top</button>
-
-    <div class="overlay" id="overlay">
-        <img id="overlayImage" src="" alt="Overlay Image">
-    </div>
-
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Back to Top Button functionality
-        const backToTopButton = document.getElementById("backToTop");
-
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        backToTopButton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-
-        // Overlay functionality for image click
-        const overlay = document.getElementById("overlay");
-        const overlayImage = document.getElementById("overlayImage");
-
-        function showImage(src) {
-            overlayImage.src = src;
-            overlay.style.display = "flex";
-        }
-
-        overlay.onclick = function () {
-            overlay.style.display = "none";
-        };
-    </script>
-    <script>
-        document.getElementById('loadYouTube').onclick = function() {
-        var placeholder = document.getElementById('youtube-placeholder');
-        placeholder.innerHTML = '<iframe style="border-radius:12px" src="https://www.youtube.com/embed/videoseries?list=PLV8oNL8D_M-BPqYUnhmC_LzIbsH4a2o3a" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>';
-        };
-    </script>
-    <script>
-        document.getElementById('loadSpotify').onclick = function() {
-        var placeholder = document.getElementById('spotify-placeholder');
-        placeholder.innerHTML = '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/1M0iXpavLgKsRaZfiB18ne?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
-        };
-    </script>
-
+    <script src="js/scripts.js"></script>
 </body>
-
 </html>

@@ -5,452 +5,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="icon" href="images/symbol.jpeg">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/gallery.css">
-    <title>Gallery - Asura Falls</title>
-    <style>
-        body {
-            background-image: url('background.jpeg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: black;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        section {
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 10px;
-            border-radius: 10px;
-            z-index: 3;
-            position: relative;
-        }
-
-        .navbar .nav-link {
-            color: white;
-            transition: color 0.2s;
-        }
-
-        .navbar .nav-link:hover {
-            color: #1db954;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            z-index: 3;
-            position: relative;
-        }
-
-        footer a {
-            color: white;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: #1db954;
-        }
-
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            flex-basis: calc(20% - 2px);
-            margin: 1px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 4;
-        }
-
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .back-to-top,
-        .back-to-main {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0335D1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: none;
-            z-index: 6;
-        }
-
-        .back-to-main {
-            bottom: 80px;
-        }
-
-        .category-buttons {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .category-buttons button {
-            background-color: #0335D1;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .category-buttons button.active {
-            background-color: #2162FE;
-        }
-    </style>
+    
+    <title>Gallery | Asura Falls</title>
 </head>
 
 <body>
+    <div class="bg-overlay"></div>
 
-    <nav id="navbar" class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Logo" style="height: 50px;">
-        </a>
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#band">Band</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#media">Media</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact</a>
-                </li>
-            </ul>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Asura Falls Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- Same-page scroll links -->
+                    <li class="nav-item"><a class="nav-link" href="index.html#band">The Band</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#shows">Shows</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#media">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#rider">EPK & Rider</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+
+                    <!-- Visual separator for modern structure -->
+                    <li class="nav-divider d-none d-lg-block"></li>
+
+                    <!-- Page transition links -->
+                    <li class="nav-item"><a class="nav-link nav-link-alt" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-alt active" href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <section>
-        <div style="text-align: center; margin-bottom: 20px; font-size: 20px; color: #26C0FC;">
-        <p>All images were taken by Michael Vogel. Follow him on Instagram: 
-            <a href="https://www.instagram.com/mr.thuringia_music/" target="_blank" style="color: #26C0FC;">
-                @mr.thuringia_music
-            </a>
-        </p>
-    </div>
-        <h2>Gallery</h2>
-        <hr class="styled-hr">
-
-        <div class="category-buttons">
-            <button id="schanzBtn" class="active" onclick="showCategory('schanz')">Schanz 24.08.24</button>
-            <button id="ponyhofBtn" onclick="showCategory('ponyhof')">Ponyhof 30.08.24</button>
-            <button id="elverBtn" onclick="showCategory('elver')">Elver Club 05.04.25</button>
-        </div>
-
-        <div class="gallery-container" id="galleryContainer">
-            <!-- Schanz Images -->
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz1.jpg')">
-                <img src="images/schanz/schanz1.jpg" alt="Schanz Image 1">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz2.jpg')">
-                <img src="images/schanz/schanz2.jpg" alt="Schanz Image 2">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz3.jpg')">
-                <img src="images/schanz/schanz3.jpg" alt="Schanz Image 3">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz4.jpg')">
-                <img src="images/schanz/schanz4.jpg" alt="Schanz Image 4">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz5.jpg')">
-                <img src="images/schanz/schanz5.jpg" alt="Schanz Image 5">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz6.jpg')">
-                <img src="images/schanz/schanz6.jpg" alt="Schanz Image 6">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz7.jpg')">
-                <img src="images/schanz/schanz7.jpg" alt="Schanz Image 7">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz8.jpg')">
-                <img src="images/schanz/schanz8.jpg" alt="Schanz Image 8">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz9.jpg')">
-                <img src="images/schanz/schanz9.jpg" alt="Schanz Image 9">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz10.jpg')">
-                <img src="images/schanz/schanz10.jpg" alt="Schanz Image 10">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz11.jpg')">
-                <img src="images/schanz/schanz11.jpg" alt="Schanz Image 11">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz12.jpg')">
-                <img src="images/schanz/schanz12.jpg" alt="Schanz Image 12">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz13.jpg')">
-                <img src="images/schanz/schanz13.jpg" alt="Schanz Image 13">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz14.jpg')">
-                <img src="images/schanz/schanz14.jpg" alt="Schanz Image 14">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz15.jpg')">
-                <img src="images/schanz/schanz15.jpg" alt="Schanz Image 15">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz16.jpg')">
-                <img src="images/schanz/schanz16.jpg" alt="Schanz Image 16">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz17.jpg')">
-                <img src="images/schanz/schanz17.jpg" alt="Schanz Image 17">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz18.jpg')">
-                <img src="images/schanz/schanz18.jpg" alt="Schanz Image 18">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz19.jpg')">
-                <img src="images/schanz/schanz19.jpg" alt="Schanz Image 19">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz20.jpg')">
-                <img src="images/schanz/schanz20.jpg" alt="Schanz Image 20">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz21.jpg')">
-                <img src="images/schanz/schanz21.jpg" alt="Schanz Image 21">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz22.jpg')">
-                <img src="images/schanz/schanz22.jpg" alt="Schanz Image 22">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz23.jpg')">
-                <img src="images/schanz/schanz23.jpg" alt="Schanz Image 23">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz24.jpg')">
-                <img src="images/schanz/schanz24.jpg" alt="Schanz Image 24">
-            </div>
-            <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz25.jpg')">
-                <img src="images/schanz/schanz25.jpg" alt="Schanz Image 25">
+    <main class="container" style="padding-top: 150px;">
+        <section class="visible">
+            <div class="text-center mb-5">
+                <h2>Gallery</h2>
+                <p class="lead text-muted">Moments from the stage</p>
+                <p class="small">Photos by Michael Vogel | 
+                    <a href="https://www.instagram.com/mr.thuringia_music/" target="_blank" class="text-primary">@mr.thuringia_music</a>
+                </p>
             </div>
 
-            <!-- Ponyhof Images -->
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof1.jpg')">
-                <img src="images/ponyhof/ponyhof1.jpg" alt="Ponyhof Image 1">
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-category="all">All</button>
+                <button class="btn-filter" data-category="schanz">Schanz 24.08.24</button>
+                <button class="btn-filter" data-category="ponyhof">Ponyhof 30.08.24</button>
+                <button class="btn-filter" data-category="elver">Elver Club 05.04.25</button>
             </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof2.jpg')">
-                <img src="images/ponyhof/ponyhof2.jpg" alt="Ponyhof Image 2">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof3.jpg')">
-                <img src="images/ponyhof/ponyhof3.jpg" alt="Ponyhof Image 3">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof4.jpg')">
-                <img src="images/ponyhof/ponyhof4.jpg" alt="Ponyhof Image 4">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof5.jpg')">
-                <img src="images/ponyhof/ponyhof5.jpg" alt="Ponyhof Image 5">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof6.jpg')">
-                <img src="images/ponyhof/ponyhof6.jpg" alt="Ponyhof Image 6">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof7.jpg')">
-                <img src="images/ponyhof/ponyhof7.jpg" alt="Ponyhof Image 7">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof8.jpg')">
-                <img src="images/ponyhof/ponyhof8.jpg" alt="Ponyhof Image 8">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof9.jpg')">
-                <img src="images/ponyhof/ponyhof9.jpg" alt="Ponyhof Image 9">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof10.jpg')">
-                <img src="images/ponyhof/ponyhof10.jpg" alt="Ponyhof Image 10">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof11.jpg')">
-                <img src="images/ponyhof/ponyhof11.jpg" alt="Ponyhof Image 11">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof12.jpg')">
-                <img src="images/ponyhof/ponyhof12.jpg" alt="Ponyhof Image 12">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof13.jpg')">
-                <img src="images/ponyhof/ponyhof13.jpg" alt="Ponyhof Image 13">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof14.jpg')">
-                <img src="images/ponyhof/ponyhof14.jpg" alt="Ponyhof Image 14">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof15.jpg')">
-                <img src="images/ponyhof/ponyhof15.jpg" alt="Ponyhof Image 15">
-            </div>
-            <div class="gallery-item ponyhof" style="display:none;" onclick="showImage('images/ponyhof/ponyhof16.jpg')">
-                <img src="images/ponyhof/ponyhof16.jpg" alt="Ponyhof Image 16">
+
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Schanz -->
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz1.jpg')"><img src="images/schanz/schanz1.jpg" alt="Schanz 1"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz2.jpg')"><img src="images/schanz/schanz2.jpg" alt="Schanz 2"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz3.jpg')"><img src="images/schanz/schanz3.jpg" alt="Schanz 3"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz4.jpg')"><img src="images/schanz/schanz4.jpg" alt="Schanz 4"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz5.jpg')"><img src="images/schanz/schanz5.jpg" alt="Schanz 5"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz6.jpg')"><img src="images/schanz/schanz6.jpg" alt="Schanz 6"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz7.jpg')"><img src="images/schanz/schanz7.jpg" alt="Schanz 7"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz8.jpg')"><img src="images/schanz/schanz8.jpg" alt="Schanz 8"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz9.jpg')"><img src="images/schanz/schanz9.jpg" alt="Schanz 9"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz10.jpg')"><img src="images/schanz/schanz10.jpg" alt="Schanz 10"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz11.jpg')"><img src="images/schanz/schanz11.jpg" alt="Schanz 11"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz12.jpg')"><img src="images/schanz/schanz12.jpg" alt="Schanz 12"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz13.jpg')"><img src="images/schanz/schanz13.jpg" alt="Schanz 13"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz14.jpg')"><img src="images/schanz/schanz14.jpg" alt="Schanz 14"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz15.jpg')"><img src="images/schanz/schanz15.jpg" alt="Schanz 15"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz16.jpg')"><img src="images/schanz/schanz16.jpg" alt="Schanz 16"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz17.jpg')"><img src="images/schanz/schanz17.jpg" alt="Schanz 17"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz18.jpg')"><img src="images/schanz/schanz18.jpg" alt="Schanz 18"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz19.jpg')"><img src="images/schanz/schanz19.jpg" alt="Schanz 19"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz20.jpg')"><img src="images/schanz/schanz20.jpg" alt="Schanz 20"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz21.jpg')"><img src="images/schanz/schanz21.jpg" alt="Schanz 21"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz22.jpg')"><img src="images/schanz/schanz22.jpg" alt="Schanz 22"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz23.jpg')"><img src="images/schanz/schanz23.jpg" alt="Schanz 23"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz24.jpg')"><img src="images/schanz/schanz24.jpg" alt="Schanz 24"></div>
+                <div class="gallery-item schanz" onclick="showImage('images/schanz/schanz25.jpg')"><img src="images/schanz/schanz25.jpg" alt="Schanz 25"></div>
+
+                <!-- Ponyhof -->
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof1.jpg')"><img src="images/ponyhof/ponyhof1.jpg" alt="Ponyhof 1"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof2.jpg')"><img src="images/ponyhof/ponyhof2.jpg" alt="Ponyhof 2"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof3.jpg')"><img src="images/ponyhof/ponyhof3.jpg" alt="Ponyhof 3"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof4.jpg')"><img src="images/ponyhof/ponyhof4.jpg" alt="Ponyhof 4"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof5.jpg')"><img src="images/ponyhof/ponyhof5.jpg" alt="Ponyhof 5"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof6.jpg')"><img src="images/ponyhof/ponyhof6.jpg" alt="Ponyhof 6"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof7.jpg')"><img src="images/ponyhof/ponyhof7.jpg" alt="Ponyhof 7"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof8.jpg')"><img src="images/ponyhof/ponyhof8.jpg" alt="Ponyhof 8"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof9.jpg')"><img src="images/ponyhof/ponyhof9.jpg" alt="Ponyhof 9"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof10.jpg')"><img src="images/ponyhof/ponyhof10.jpg" alt="Ponyhof 10"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof11.jpg')"><img src="images/ponyhof/ponyhof11.jpg" alt="Ponyhof 11"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof12.jpg')"><img src="images/ponyhof/ponyhof12.jpg" alt="Ponyhof 12"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof13.jpg')"><img src="images/ponyhof/ponyhof13.jpg" alt="Ponyhof 13"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof14.jpg')"><img src="images/ponyhof/ponyhof14.jpg" alt="Ponyhof 14"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof15.jpg')"><img src="images/ponyhof/ponyhof15.jpg" alt="Ponyhof 15"></div>
+                <div class="gallery-item ponyhof" onclick="showImage('images/ponyhof/ponyhof16.jpg')"><img src="images/ponyhof/ponyhof16.jpg" alt="Ponyhof 16"></div>
+
+                <!-- Elver -->
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer1.jpg')"><img src="images/elfer/elfer1.jpg" alt="Elver 1"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer2.jpg')"><img src="images/elfer/elfer2.jpg" alt="Elver 2"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer3.jpg')"><img src="images/elfer/elfer3.jpg" alt="Elver 3"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer4.jpg')"><img src="images/elfer/elfer4.jpg" alt="Elver 4"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer5.jpg')"><img src="images/elfer/elfer5.jpg" alt="Elver 5"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer6.jpg')"><img src="images/elfer/elfer6.jpg" alt="Elver 6"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer7.jpg')"><img src="images/elfer/elfer7.jpg" alt="Elver 7"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer8.jpg')"><img src="images/elfer/elfer8.jpg" alt="Elver 8"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer9.jpg')"><img src="images/elfer/elfer9.jpg" alt="Elver 9"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer10.jpg')"><img src="images/elfer/elfer10.jpg" alt="Elver 10"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer11.jpg')"><img src="images/elfer/elfer11.jpg" alt="Elver 11"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer12.jpg')"><img src="images/elfer/elfer12.jpg" alt="Elver 12"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer13.jpg')"><img src="images/elfer/elfer13.jpg" alt="Elver 13"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer14.jpg')"><img src="images/elfer/elfer14.jpg" alt="Elver 14"></div>
+                <div class="gallery-item elver" onclick="showImage('images/elfer/elfer15.jpg')"><img src="images/elfer/elfer15.jpg" alt="Elver 15"></div>
             </div>
             
-            <!-- Elfer Club Images -->
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer1.jpg')">
-                <img src="images/elfer/elfer1.jpg" alt="elfer Image 1">
+            <div class="text-center mt-5 mb-5">
+                <a href="index.html" class="btn btn-tickets"><i class="fas fa-home mr-2"></i> Return Home</a>
             </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer2.jpg')">
-                <img src="images/elfer/elfer2.jpg" alt="elfer Image 2">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer3.jpg')">
-                <img src="images/elfer/elfer3.jpg" alt="elfer Image 3">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer4.jpg')">
-                <img src="images/elfer/elfer4.jpg" alt="elfer Image 4">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer5.jpg')">
-                <img src="images/elfer/elfer5.jpg" alt="elfer Image 5">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer6.jpg')">
-                <img src="images/elfer/elfer6.jpg" alt="elfer Image 6">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer7.jpg')">
-                <img src="images/elfer/elfer7.jpg" alt="elfer Image 7">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer8.jpg')">
-                <img src="images/elfer/elfer8.jpg" alt="elfer Image 8">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer9.jpg')">
-                <img src="images/elfer/elfer9.jpg" alt="elfer Image 9">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer10.jpg')">
-                <img src="images/elfer/elfer10.jpg" alt="elfer Image 10">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer11.jpg')">
-                <img src="images/elfer/elfer11.jpg" alt="elfer Image 11">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer12.jpg')">
-                <img src="images/elfer/elfer12.jpg" alt="elfer Image 12">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer13.jpg')">
-                <img src="images/elfer/elfer13.jpg" alt="elfer Image 13">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer14.jpg')">
-                <img src="images/elfer/elfer14.jpg" alt="elfer Image 14">
-            </div>
-            <div class="gallery-item elfer" onclick="showImage('images/elfer/elfer15.jpg')">
-                <img src="images/elfer/elfer15.jpg" alt="elfer Image 15">
-            </div>
-            
-        </div>
+        </section>
+    </main>
 
-    </section>
-
-    <div class="overlay" id="overlay">
+    <div class="overlay" id="imageOverlay">
         <img id="overlayImage" src="" alt="Full Size Image">
     </div>
 
-    <button class="back-to-main" id="backToMainBtn"><i class="fas fa-arrow-left"></i> Back to Main Page</button>
-    <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i> Back to Top</button>
-
     <footer>
-        <p>&copy; 2024 Asura Falls. All rights reserved. | <a href="text12.html">Impressum</a></p>
+        <div class="container">
+            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
+            <p><a href="text12.html" class="text-muted">Impressum</a></p>
+        </div>
     </footer>
 
-    <script>
-        const backToTopBtn = document.getElementById("backToTopBtn");
-        const backToMainBtn = document.getElementById("backToMainBtn");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.style.display = "block";
-                backToMainBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-                backToMainBtn.style.display = "none";
-            }
-        });
-
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        backToMainBtn.addEventListener("click", () => {
-            window.location.href = "index.html";
-        });
-
-        function showImage(src) {
-            const overlay = document.getElementById("overlay");
-            const overlayImage = document.getElementById("overlayImage");
-            overlay.style.display = "flex";
-            overlayImage.src = src;
-        }
-
-        function showCategory(category) {
-            const allItems = document.querySelectorAll('.gallery-item');
-            const categories = ['schanz', 'ponyhof'];
-            categories.forEach(cat => {
-                allItems.forEach(item => {
-                    if (item.classList.contains(cat)) {
-                        item.style.display = (cat === category) ? 'block' : 'none';
-                    }
-                });
-            });
-
-            document.getElementById('schanzBtn').classList.remove('active');
-            document.getElementById('ponyhofBtn').classList.remove('active');
-            document.getElementById('elverBtn').classList.remove('active');
-
-            if (category === 'schanz') {
-                document.getElementById('schanzBtn').classList.add('active');
-            } else if (category === 'ponyhof') {
-                document.getElementById('ponyhofBtn').classList.add('active');
-            } else if (category === 'elver') {
-                document.getElementById('elverBtn').classList.add('active');
-            }
-        }
-
-        document.getElementById("overlay").addEventListener("click", () => {
-            document.getElementById("overlay").style.display = "none";
-        });
-
-        showCategory('schanz');
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
-
 </html>
