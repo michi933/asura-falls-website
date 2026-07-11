@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #1db954;
-    --primary-glow: rgba(29, 185, 84, 0.3);
-    --accent-color: #0335D1;
+    --primary-color: #a855f7; /* Vibrant Purple */
+    --primary-glow: rgba(168, 85, 247, 0.3);
+    --accent-color: #3b82f6; /* Bright Blue */
     --bg-dark: #050505;
     --card-bg: rgba(15, 15, 15, 0.95);
     --text-main: #ffffff;
@@ -64,7 +64,7 @@ h2::after {
     background: var(--primary-color);
 }
 
-/* 3. Navigation Styling (Unified Across All Pages) */
+/* 3. Navigation Styling */
 .navbar {
     background: rgba(0, 0, 0, 0.95) !important;
     backdrop-filter: blur(10px);
@@ -94,7 +94,7 @@ h2::after {
     color: var(--primary-color) !important;
 }
 
-/* Page Links (Distinguished Styling) */
+/* Page Links */
 .nav-link-alt {
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 5px;
@@ -104,7 +104,7 @@ h2::after {
 
 .nav-link-alt:hover {
     border-color: var(--primary-color);
-    background-color: rgba(29, 185, 84, 0.1);
+    background-color: rgba(168, 85, 247, 0.1);
 }
 
 /* Nav Divider */
@@ -113,6 +113,45 @@ h2::after {
     height: 24px;
     background-color: rgba(255,255,255,0.15);
     margin: 0 15px;
+}
+
+/* Mobile Navbar Centering Fix */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .navbar-nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .nav-item {
+        width: 100%;
+        margin: 0 !important;
+    }
+    
+    .nav-link {
+        margin: 8px 0 !important;
+        padding: 10px 0 !important;
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-divider {
+        display: none;
+    }
+    
+    .nav-link-alt {
+        margin: 8px 0 !important;
+        border: none !important;
+        background: transparent !important;
+    }
 }
 
 /* 4. Hero Section */
@@ -168,8 +207,6 @@ h2::after {
     .hero-title { font-size: 3.5rem; }
     .hero-subtitle { letter-spacing: 4px; }
     .hero-img-wrap img { max-height: 40vh; }
-    .nav-divider { display: none; }
-    .nav-link-alt { margin: 10px 0 !important; border: none; padding-left: 0 !important; }
 }
 
 /* 5. Sections & Animations */
@@ -235,7 +272,6 @@ section {
     color: #fff;
     text-align: left;
     border-top: 1px solid rgba(255,255,255,0.1);
-    /* Prevent jumping: stable min-height for consistent layout */
     min-height: 320px;
     display: flex;
     flex-direction: column;
@@ -268,7 +304,6 @@ section {
     font-weight: 300;
 }
 
-/* Responsive Carousel Heights */
 @media (max-width: 992px) {
     .member-bio { min-height: 380px; }
 }
@@ -281,7 +316,7 @@ section {
     }
     .carousel-control-prev,
     .carousel-control-next {
-        height: 400px !important; /* Center arrows on image area only */
+        height: 400px !important;
     }
 }
 
@@ -294,13 +329,12 @@ section {
     }
 }
 
-/* Enhanced Controls */
 .carousel-control-prev,
 .carousel-control-next {
     width: 12%;
     opacity: 0.8;
     transition: opacity 0.3s;
-    height: 500px; /* Default desktop height of image wrap */
+    height: 500px;
 }
 
 .carousel-control-prev:hover,
@@ -341,7 +375,7 @@ section {
     border: none;
     padding: 10px 30px;
     border-radius: 50px;
-    color: #000;
+    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
@@ -355,7 +389,7 @@ section {
     transform: scale(1.05);
 }
 
-/* 8. Gallery Grid with Professional Transition */
+/* 8. Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -379,7 +413,7 @@ section {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* Slightly bigger on hover as requested */
+    transform: scale(1.1);
 }
 
 /* 9. Lightbox */
