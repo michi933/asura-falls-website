@@ -1,0 +1,19 @@
+[
+  {
+    "image": "images/elfer/elfer1.jpg",
+    "imageAlt": { "en": "Asura Falls live at Elfer Club", "de": "Asura Falls live im Elfer Club" },
+    "title": { "en": "Metalcore in its purest form", "de": "Metalcore in Reinform" },
+    "description": {
+      "en": "An explosive evening — three bands showed why metalcore is a way of life.",
+      "de": "Ein Abend, der knallt – drei Bands zeigten, warum Metalcore ein Lebensgefühl ist."
+    },
+    "url": "https://skulls-and-bones-magazine.de/rhein-main-metalcore-united-drei-bands-ein-abriss/"
+  },
+  {
+    "image": "images/schanz/schanz1.jpg",
+    "imageAlt": { "en": "Asura Falls live at Schanz", "de": "Asura Falls live im Schanz" },
+    "title": { "en": "Breakdown Bash 2024", "de": "Breakdown Bash 2024" },
+    "description": { "en": "A night of mayhem at Schanz, Frankfurt am Main.", "de": "Abriss im Schanz, Frankfurt am Main." },
+    "url": "https://skulls-and-bones-magazine.de/breakdown-bash-2024-heisse-klaenge-und-rebellische-riffs-im-schanz-in-muehlheim-am-main/"
+  }
+]

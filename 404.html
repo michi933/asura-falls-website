@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="The requested page could not be found on the Asura Falls website.">
+    <link rel="icon" href="/images/symbol.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Page not found | Asura Falls</title>
+</head>
+
+<body data-page="404" class="error-page">
+    <div class="bg-overlay"></div>
+
+    <nav id="navbar" class="navbar navbar-dark fixed-top">
+        <div class="container error-nav">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" alt="Asura Falls Logo">
+            </a>
+            <div class="language-toggle" aria-label="Language selection">
+                <button type="button" data-language="en" aria-label="Show website in English" title="English"><span class="language-flag flag-gb" aria-hidden="true"></span></button>
+                <button type="button" data-language="de" aria-label="Website auf Deutsch anzeigen" title="Deutsch"><span class="language-flag flag-de" aria-hidden="true"></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-main container">
+        <section class="visible error-content">
+            <p class="error-code" aria-hidden="true">404</p>
+            <h1 data-i18n="error.title">Page not found</h1>
+            <p class="lead" data-i18n="error.text">The page you requested does not exist or may have moved.</p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-tickets" data-i18n="error.home">Back to home</a>
+                <a href="/#shows" class="btn error-secondary-button" data-i18n="error.shows">Upcoming shows</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span data-current-year></span> Asura Falls. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

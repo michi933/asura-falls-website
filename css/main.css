@@ -115,6 +115,68 @@ h2::after {
     margin: 0 15px;
 }
 
+.language-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 12px;
+}
+
+.language-toggle button {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.38rem 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.language-toggle button:hover,
+.language-toggle button:focus-visible,
+.language-toggle button.active {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.language-toggle button.active {
+    border-color: var(--primary-color);
+    background: rgba(168, 85, 247, 0.16);
+    font-weight: 700;
+}
+
+.language-flag {
+    display: block;
+    width: 24px;
+    height: 16px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.flag-de {
+    background: linear-gradient(to bottom, #000 0 33.333%, #dd0000 33.333% 66.666%, #ffce00 66.666% 100%);
+}
+
+.flag-gb {
+    background:
+        linear-gradient(33deg, transparent 43%, #fff 43% 47%, #c8102e 47% 53%, #fff 53% 57%, transparent 57%),
+        linear-gradient(-33deg, transparent 43%, #fff 43% 47%, #c8102e 47% 53%, #fff 53% 57%, transparent 57%),
+        linear-gradient(to right, transparent 40%, #fff 40% 45%, #c8102e 45% 55%, #fff 55% 60%, transparent 60%),
+        linear-gradient(to bottom, transparent 35%, #fff 35% 42%, #c8102e 42% 58%, #fff 58% 65%, transparent 65%),
+        #012169;
+}
+
+.ticket-label {
+    cursor: default;
+}
+
 /* Mobile Navbar Centering Fix */
 @media (max-width: 991px) {
     .navbar-collapse {
@@ -151,6 +213,11 @@ h2::after {
         margin: 8px 0 !important;
         border: none !important;
         background: transparent !important;
+    }
+
+    .language-toggle {
+        justify-content: center;
+        margin: 8px 0 0;
     }
 }
 
@@ -365,7 +432,13 @@ section {
 
 @media (max-width: 992px) {
     .show-card { flex-direction: column; }
-    .show-image { width: 100%; height: 250px; }
+    .show-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background: #000;
+    }
 }
 
 .show-info { padding: 30px; flex-grow: 1; }
@@ -475,3 +548,69 @@ footer {
 }
 
 .back-to-top.visible { opacity: 1; visibility: visible; }
+
+/* 11. Not Found Page */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.error-content {
+    width: min(720px, 100%);
+    padding: 55px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    background: rgba(18, 18, 18, 0.9);
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 18vw, 10rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+}
+
+.error-content h1 {
+    margin-top: 25px;
+}
+
+.error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.error-secondary-button {
+    padding: 10px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.error-secondary-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}

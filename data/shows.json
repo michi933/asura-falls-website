@@ -1,0 +1,49 @@
+[
+  {
+    "image": "images/upcoming2026v1.1.png",
+    "title": { "en": "Season 2026", "de": "Saison 2026" },
+    "description": {
+      "en": "Stay tuned for more updates on our upcoming tour dates.",
+      "de": "Weitere Termine für unsere kommenden Shows folgen."
+    }
+  },
+  {
+    "image": "images/museum300826.png",
+    "title": { "en": "30 Aug 2026 — Frankfurt Museumsuferfest", "de": "30.08.2026 — Frankfurter Museumsuferfest" },
+    "location": { "en": "Große Feinstaubbühne, by the Eiserner Steg on the Sachsenhausen side", "de": "Große Feinstaubbühne, direkt am Eisernen Steg / Sachsenhäuser Seite" },
+    "ticketLabel": { "en": "Free admission", "de": "Freier Eintritt" },
+    "url": ""
+  },
+  {
+    "image": "images/kronedarmstadt050826.png",
+    "title": { "en": "5 Sep 2026 — Darmstadt", "de": "05.09.2026 — Darmstadt" },
+    "location": { "en": "Goldene Krone", "de": "Goldene Krone" },
+    "with": { "en": "Past Reflection, Atherbound", "de": "Past Reflection, Atherbound" },
+    "ticketLabel": { "en": "Get tickets", "de": "Tickets kaufen" },
+    "url": "https://www.eventim-light.com/de/a/699c48b12a1b6440e5b4722c/e/6a63c665f6a091bd5dec6eb7?lang=de"
+  },
+  {
+    "image": "images/moefelden260926.jpeg",
+    "title": { "en": "26 Sep 2026 — Mörfelden", "de": "26.09.2026 — Mörfelden" },
+    "location": { "en": "Jukuz Mörfelden", "de": "Jukuz Mörfelden" },
+    "with": { "en": "FLAERKEN, Pale Shape", "de": "FLAERKEN, Pale Shape" },
+    "ticketLabel": { "en": "Tickets at the door: €7", "de": "Tickets: Abendkasse 7 €" },
+    "url": ""
+  },
+  {
+    "image": "images/ac2maintal241026.png",
+    "title": { "en": "24 Oct 2026 — Maintal", "de": "24.10.2026 — Maintal" },
+    "location": { "en": "Railway Maintal e.V.", "de": "Railway Maintal e.V." },
+    "with": { "en": "Lorraine, Gift of Guilt, Devastated, No Man's Tale", "de": "Lorraine, Gift of Guilt, Devastated, No Man's Tale" },
+    "ticketLabel": { "en": "Get tickets", "de": "Tickets kaufen" },
+    "url": "https://eventfrog.de/de/p/konzerte/hard-rock-heavy-metal/autumn-core-fest-vol-2-7490648964271742744.html"
+  },
+  {
+    "image": "images/flyerschanz141126.jpeg",
+    "title": { "en": "14 Nov 2026 — Mühlheim am Main", "de": "14.11.2026 — Mühlheim am Main" },
+    "location": { "en": "Kulturhalle Schanz", "de": "Kulturhalle Schanz" },
+    "with": { "en": "About Monsters, Spillflower, Whatever We Trust", "de": "About Monsters, Spillflower, Whatever We Trust" },
+    "ticketLabel": { "en": "Get tickets", "de": "Tickets kaufen" },
+    "url": "https://www.reservix.de/p/reservix/event/2559204"
+  }
+]

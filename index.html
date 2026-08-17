@@ -4,6 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Asura Falls are a modern metalcore band from Frankfurt, Germany. Discover upcoming shows, music, press coverage, photos, and booking information.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.asurafalls.de/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Asura Falls">
+    <meta property="og:title" content="Asura Falls | Metalcore from Frankfurt">
+    <meta property="og:description" content="Modern metalcore from Frankfurt. Explore upcoming shows, music, press coverage, photos, and booking information.">
+    <meta property="og:url" content="https://www.asurafalls.de/">
+    <meta property="og:image" content="https://www.asurafalls.de/images/band.jpg">
+    <meta property="og:image:alt" content="Asura Falls band portrait">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asura Falls | Metalcore from Frankfurt">
+    <meta name="twitter:description" content="Modern metalcore from Frankfurt. Explore upcoming shows, music, press coverage, photos, and booking information.">
+    <meta name="twitter:image" content="https://www.asurafalls.de/images/band.jpg">
     <link rel="icon" href="images/symbol.jpeg">
     
     <!-- Fonts -->
@@ -17,6 +33,24 @@
     <link rel="stylesheet" href="css/main.css">
     
     <title>Asura Falls | Metalcore from Frankfurt</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Asura Falls",
+      "url": "https://www.asurafalls.de/",
+      "image": "https://www.asurafalls.de/images/band.jpg",
+      "genre": "Metalcore",
+      "email": "asurafalls.ffm@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/asura__falls_band",
+        "https://www.facebook.com/asurafalls",
+        "https://www.youtube.com/@AsuraFallsBand",
+        "https://open.spotify.com/artist/1M0iXpavLgKsRaZfiB18ne",
+        "https://www.tiktok.com/@asurafallsband"
+      ]
+    }
+    </script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="100">
@@ -24,7 +58,7 @@
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="./">
                 <img src="images/logo.png" alt="Asura Falls Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,18 +67,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto align-items-center">
                     <!-- Same-page scroll links -->
-                    <li class="nav-item"><a class="nav-link" href="#band">The Band</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#shows">Shows</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#media">Media</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rider">EPK & Rider</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#band" data-i18n="nav.band">The Band</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shows" data-i18n="nav.shows">Shows</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#media" data-i18n="nav.media">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#press" data-i18n="nav.press">Press</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rider" data-i18n="nav.rider">EPK & Rider</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
                     
                     <!-- Visual separator for modern structure -->
                     <li class="nav-divider d-none d-lg-block"></li>
                     
                     <!-- Page transition links -->
-                    <li class="nav-item"><a class="nav-link nav-link-alt" href="history.html">History</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-alt" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-alt" href="history" data-i18n="nav.history">History</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-alt" href="gallery" data-i18n="nav.gallery">Gallery</a></li>
+                    <li class="nav-item language-toggle" aria-label="Language selection">
+                        <button type="button" data-language="en" aria-label="Show website in English" title="English"><span class="language-flag flag-gb" aria-hidden="true"></span></button>
+                        <button type="button" data-language="de" aria-label="Website auf Deutsch anzeigen" title="Deutsch"><span class="language-flag flag-de" aria-hidden="true"></span></button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -68,7 +107,7 @@
         <section id="band">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center animate-on-scroll">
-                    <h2>The Band</h2>
+                    <h2 data-i18n="home.bandTitle">The Band</h2>
                     <p class="band-intro" style="border:none; padding-left:0;">
                         Asura Falls stand for high-energy modern metalcore with a clear message, massive riffs, and two unmistakable voices. The six-piece band combines melodic depth, emotional intensity, and uncommon diversity into their music.
                     </p>
@@ -161,64 +200,8 @@
 
         <!-- Shows Section -->
         <section id="shows">
-            <h2 class="animate-on-scroll">Upcoming Shows</h2>
-
-            <div class="show-card animate-on-scroll">
-                <img src="images/upcoming2026v1.1.png" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>Season 2026</h3>
-                    <p>Stay tuned for more updates on our upcoming tour dates.</p>
-                </div>
-            </div>
-            
-            <div class="show-card animate-on-scroll">
-                <img src="images/museum300826.png" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>30.08.2026 - Frankfurter Museumsuferfest</h3>
-                    <p><strong>Location:</strong> Große Feinstaubbühne, direkt am Eisernen Steg / Sachenhäuser Seite</p>
-                    <a href="" class="btn btn-tickets" target="_blank">Freier Eintritt</a>
-                </div>
-            </div>
- 
-            <div class="show-card animate-on-scroll">
-                <img src="images/kronedarmstadt050826.png" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>05.09.2026 - Darmstadt</h3>
-                    <p><strong>Location:</strong> Goldene Krone</p>
-                    <p><strong>With:</strong> Past Refelction, Atherbound</p>
-                    <a href="https://www.eventim-light.com/de/a/699c48b12a1b6440e5b4722c/e/6a63c665f6a091bd5dec6eb7?lang=de" class="btn btn-tickets" target="_blank">Get Tickets</a>
-                </div>
-            </div>
-                                                           
-            <div class="show-card animate-on-scroll">
-                <img src="images/moefelden260926.jpeg" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>26.09.2026 - Mörfelden</h3>
-                    <p><strong>Location:</strong> Jukuz Mörfelden</p>
-                    <p><strong>With:</strong> FLAERKEN, Pale Shape</p>
-                    <a href="" class="btn btn-tickets" target="_blank">Tickets: Abendkasse 7€</a>
-                </div>
-            </div>
-            
-            <div class="show-card animate-on-scroll">
-                <img src="images/ac2maintal241026.png" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>24.10.2026 - Maintal</h3>
-                    <p><strong>Location:</strong> Railway Maintal e.V.</p>
-                    <p><strong>With:</strong> Lorraine, Gift of Guilt, Devastated, No Man's Tale</p>
-                    <a href="https://eventfrog.de/de/p/konzerte/hard-rock-heavy-metal/autumn-core-fest-vol-2-7490648964271742744.html" class="btn btn-tickets" target="_blank">Get Tickets</a>
-                </div>
-            </div>
-
-            <div class="show-card animate-on-scroll">
-                <img src="images/flyerschanz141126.jpeg" alt="Show Image" class="show-image">
-                <div class="show-info">
-                    <h3>14.11.2026 - Mühlheim am Main</h3>
-                    <p><strong>Location:</strong> Kulturhalle Schanz</p>
-                    <p><strong>With:</strong> About Monsters, Spillflower, Whatever We Trust</p>
-                    <a href="https://www.reservix.de/p/reservix/event/2559204" class="btn btn-tickets" target="_blank">Get Tickets</a>
-                </div>
-            </div>
+            <h2 class="animate-on-scroll" data-i18n="home.showsTitle">Upcoming Shows</h2>
+            <div id="shows-content"></div>
         </section>
 
         <!-- Media Section -->
@@ -227,15 +210,15 @@
                 <div class="col-md-6 mb-4 animate-on-scroll">
                     <h2>YouTube</h2>
                     <div id="youtube-placeholder" class="media-placeholder">
-                        <p>Accept external services to load our YouTube playlist.</p>
-                        <button id="loadYouTube" class="btn btn-danger">Load YouTube</button>
+                        <p data-i18n="media.consent" data-service="YouTube">Accept external services to load our YouTube player.</p>
+                        <button id="loadYouTube" class="btn btn-danger" data-i18n="media.loadYoutube">Load YouTube</button>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4 animate-on-scroll">
                     <h2>Spotify</h2>
                     <div id="spotify-placeholder" class="media-placeholder">
-                        <p>Accept external services to load the Spotify player.</p>
-                        <button id="loadSpotify" class="btn btn-success">Load Spotify</button>
+                        <p data-i18n="media.consent" data-service="Spotify">Accept external services to load our Spotify player.</p>
+                        <button id="loadSpotify" class="btn btn-success" data-i18n="media.loadSpotify">Load Spotify</button>
                     </div>
                 </div>
             </div>
@@ -243,53 +226,34 @@
 
         <!-- Press Section -->
         <section id="press">
-            <h2 class="animate-on-scroll">Press</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <a href="https://skulls-and-bones-magazine.de/rhein-main-metalcore-united-drei-bands-ein-abriss/" target="_blank" class="text-decoration-none">
-                        <div class="content-box press-box h-100">
-                            <img src="images/elfer/elfer1.jpg" alt="Press 1" class="img-fluid rounded mb-3">
-                            <h4>Metalcore in Reinform</h4>
-                            <p class="text-muted">An evening that cracks – three bands showed why Metalcore is a lifestyle.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <a href="https://skulls-and-bones-magazine.de/breakdown-bash-2024-heisse-klaenge-und-rebellische-riffs-im-schanz-in-muehlheim-am-main/" target="_blank" class="text-decoration-none">
-                        <div class="content-box press-box h-100">
-                            <img src="images/schanz/schanz1.jpg" alt="Press 2" class="img-fluid rounded mb-3">
-                            <h4>Breakdown Bash 2024</h4>
-                            <p class="text-muted">Abriss Schanz, Frankfurt am Main.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <h2 class="animate-on-scroll" data-i18n="home.pressTitle">Press</h2>
+            <div class="row" id="press-content"></div>
         </section>
 
         <!-- EPK & Rider Section -->
         <section id="rider">
             <div class="content-box text-center animate-on-scroll">
-                <h2>EPK & Stage Rider</h2>
-                <p class="lead">Download our Electronic Press Kit and Stage/Tech-Rider.</p>
+                <h2 data-i18n="home.riderTitle">EPK & Stage Rider</h2>
+                <p class="lead" data-i18n="home.riderText">Download our Electronic Press Kit and Stage/Tech Rider.</p>
                 <div class="mt-4">
                     <a href="https://drive.google.com/drive/folders/1MpWdiyV3u8q_u2vI0zSIb_OC_PH30go0?usp=drive_link" target="_blank" class="btn btn-tickets btn-lg">
-                        <i class="fas fa-download mr-2"></i> Download EPK & Rider
+                        <i class="fas fa-download mr-2"></i> <span data-i18n="home.riderButton">Download EPK & Rider</span>
                     </a>
                 </div>
-                <p class="mt-3 text-muted">Includes high-res band photos, logos, and technical requirements.</p>
+                <p class="mt-3 text-muted" data-i18n="home.riderNote">Includes high-resolution band photos, logos, and technical requirements.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <div class="content-box text-center animate-on-scroll">
-                <h2>Contact</h2>
-                <p class="lead">Reach out to us for booking and inquiries.</p>
+                <h2 data-i18n="home.contactTitle">Contact</h2>
+                <p class="lead" data-i18n="home.contactText">Reach out to us for bookings and inquiries.</p>
                 <a href="mailto:asurafalls.ffm@gmail.com" class="h4 text-primary email-link" style="transition: color 0.3s;">asurafalls.ffm@gmail.com</a>
                 <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <p>We are always open for collaborations and shows.</p>
+                        <p data-i18n="home.contactNote">We are always open to collaborations and shows.</p>
                     </div>
                 </div>
             </div>
@@ -305,8 +269,8 @@
                 <a href="https://open.spotify.com/artist/1M0iXpavLgKsRaZfiB18ne" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
                 <a href="https://www.tiktok.com/@asurafallsband" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p>&copy; 2024 Asura Falls. All rights reserved.</p>
-            <p><a href="text12.html" class="text-muted">Impressum</a></p>
+            <p>&copy; <span data-current-year></span> Asura Falls. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            <p><a href="imprint" class="text-muted" data-i18n="nav.imprint">Imprint</a></p>
         </div>
     </footer>
 
